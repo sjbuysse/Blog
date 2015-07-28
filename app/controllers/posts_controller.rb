@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
     def index
-        @posts = Post.all
+        @posts = Post.descending
     end
 
     def new
