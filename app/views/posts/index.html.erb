@@ -8,6 +8,6 @@
           Written <%=post.created_at.strftime("%B %d, %Y")%> 
         </p>
         
-        <%= link_to "Read on", post_path(post)%>
+        <button class="read_button"><%= link_to "Read on", post_path(post)%></button>
     </div>
 <%end%>

@@ -66,6 +66,12 @@ button.header_button {
           font-size: 0.8em;
 }
 
+button.read_button {
+    font-size: 0.7em;
+}
+
+
+
 /*********************
  * MAIN CONTENT
  ********************/
@@ -85,6 +91,7 @@ div#header{
     position: fixed;
     top: 0;
     right: 0;
+    height: 3em;
     left: 251px;
 
     p {
@@ -158,10 +165,30 @@ div#sidebar {
  * POST WRAPPER 
  ********************/
 div.post_wrapper {
+    border-bottom:  1px solid #d6dce0;
     border-radius: 4px;
-    margin-bottom: 10px;
-    padding: 3em;
-    /*margin-left: 250px;*/
+    padding: 3em 3em 1em 3em ;
+
+    .title {
+        margin: 0;
+    }
+
+    &:nth-child(2){
+        margin-top: 3em;
+    }
+
+    button.read_button {
+        background: transparent;
+        border: 1px solid;
+        border-radius: 1.5em;
+        padding: 0.5em 1.5em;
+        margin-top: 2em;
+
+        &:hover{
+            border: 1px solid #33acb7;
+            color: #33acb7;
+        }
+    }
 }
 
 
