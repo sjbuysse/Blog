@@ -1,0 +1,167 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require normalize
+ *= require posts
+ *= require_self
+ */
+
+/*********************
+ * TYPOGRAPHY 
+ ********************/
+html, body {
+  font-family: 'Raleway', sans-serif;
+}
+ 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}  
+
+div#sidebar{
+    /*category in sidebar*/
+    li.category {
+        font-weight: 700;
+        font-size: 0.7em;
+        text-transform: uppercase;
+        color: #33acb7;
+    }
+
+    ul{
+        margin-bottom: 1.5em;
+    }
+
+    li {
+        padding: 0.5em 0;
+        a{
+          color: #9eafba;
+          transition: all .4s ease;
+          &:hover {
+            color: #33acb7;
+          }  
+        }
+    }
+}
+
+div#header p{
+          color: #9eafba;
+}
+
+/*********************
+ * MAIN CONTENT
+ ********************/
+div#main_content {
+    margin-left: 250px;
+} 
+
+
+
+/*********************
+ * HEADER 
+ ********************/
+div#header{
+    border-bottom: 1px solid #d6dce0;
+    background: #f5f7f9;
+    padding: 0 3em;
+
+    p {
+        display: inline-block;
+    }
+
+    
+    #header_buttons{
+        float: right;
+    }
+}
+
+
+
+/*********************
+ * SIDEBAR 
+ ********************/
+div#sidebar {
+    border-right: 1px solid #d6dce0;
+    background-color: #f5f7f9;
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 7.5em 0 0 0;
+    
+    div#logo{
+        position:absolute;
+        top: 3em;
+        right: 3em;
+
+        img{
+            width: 3em;
+        }
+    }
+    
+    ul{
+        list-style:none;
+        text-align: right;
+        padding-right: 3em;
+    }
+
+    li{
+    }
+}
+
+
+/*********************
+ * POST WRAPPER 
+ ********************/
+div.post_wrapper {
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 3em;
+    /*margin-left: 250px;*/
+}
+
+
+
+/*********************
+ * FLASH ALERTS 
+ ********************/
+div.alert {
+    border: 2px solid #444;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 0 1em;
+}
+
+div.success {
+    border: 2px solid green;
+    color: green; 
+    }
+
+div.error {
+    border: 2px solid red;
+    color: red; 
+    }
+
+
+
+/*********************
+ * CLEARFIX 
+ ********************/
+.group:after { 
+content: ""; 
+display: table; 
+clear: both; 
+}

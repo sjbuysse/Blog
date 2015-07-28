@@ -1,19 +1,13 @@
 <% @posts.each do |post| %>
     <div id=<%=dom_id(post)%> class="post_wrapper"> 
-        <h1 class="title">
+        <h2 class="title">
           <%= post.title %>
-        </h1>
+        </h2>
          
         <p class="date">
-          Submitted <%= time_ago_in_words(post.created_at) %> Ago
+          Written <%=post.created_at.strftime("%B %d, %Y")%> 
         </p>
-         
-        <p class="body">
-          <%= post.body %>
-        </p>
-
+        
         <%= link_to "Read on", post_path(post)%>
     </div>
 <%end%>
-<br />
-<%= link_to "New post", new_post_path %>
