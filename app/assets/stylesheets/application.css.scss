@@ -18,6 +18,10 @@
 /*********************
  * TYPOGRAPHY 
  ********************/
+$pelorous: #33acb7;
+$cascade: #95A5A6;
+$shark: #2a2f35;
+
 html, body {
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
@@ -38,7 +42,7 @@ div#sidebar{
         font-weight: 700;
         font-size: 0.7em;
         text-transform: uppercase;
-        color: #33acb7;
+        color: $pelorous;
     }
 
     ul{
@@ -48,35 +52,56 @@ div#sidebar{
     li {
         padding: 0.5em 0;
         a{
-          color: #9eafba;
+          color: $cascade;
           transition: all .4s ease;
           &:hover {
-            color: #33acb7;
+            color: $pelorous;
           }  
         }
     }
 }
 
-div#header p{
-          color: #9eafba;
+div#header p, 
+.sign_in {
+          color: $cascade;
 }
 
 button.header_button {
-          color: #9eafba;
+          color: $cascade;
           font-size: 0.8em;
 }
 
 button.read_button {
     font-size: 0.7em;
+    color: $shark;
 }
 
+.sign_in {
+    font-size: 0.8em;
+}
+
+.title{
+    color: $shark;
+    font-size: 2.5em;
+} 
+.body {
+    color: $cascade;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.75;
+}
+.date{
+    color:$shark;
+    font-weight: 400;
+    font-size:0.9rem;
+}
 
 
 /*********************
  * MAIN CONTENT
  ********************/
 div#main_content {
-    margin-left: 250px;
+    margin-left: 251px;
 } 
 
 
@@ -99,7 +124,7 @@ div#header{
     }
 
     a {
-      color: #9eafba;
+      color: $cascade;
       text-decoration: none;
     }
 
@@ -116,10 +141,10 @@ div#header{
         padding: 0.5em 1.5em;
         margin-left: 0.5em;
         &:hover {
-            border: 1px solid #33acb7;
-            color: #33acb7;
+            border: 1px solid $pelorous;
+            color: $pelorous;
             a {
-              color: #33acb7 !important;
+              color: $pelorous !important;
             }
         }
     }
@@ -158,16 +183,23 @@ div#sidebar {
 
     li{
     }
+    
+    .sign_in{
+        position: absolute;
+        top: 80%;
+        right: 3em;
+    }
 }
 
 
+
 /*********************
- * POST WRAPPER 
+ * POST WRAPPER, each post in the index gets wrapped in one of these divs
  ********************/
 div.post_wrapper {
     border-bottom:  1px solid #d6dce0;
     border-radius: 4px;
-    padding: 3em 3em 1em 3em ;
+    padding: 3em 3em 1.5em 3em ;
 
     .title {
         margin: 0;
@@ -179,19 +211,61 @@ div.post_wrapper {
 
     button.read_button {
         background: transparent;
-        border: 1px solid;
+        border: 1px solid $shark;
         border-radius: 1.5em;
         padding: 0.5em 1.5em;
         margin-top: 2em;
 
         &:hover{
-            border: 1px solid #33acb7;
-            color: #33acb7;
+            border: 1px solid $pelorous;
+            color: $pelorous;
         }
     }
 }
 
 
+
+/*********************
+ * NEW POST WRAPPER
+*********************/
+div#new_post_wrapper {
+    padding: 5em 3em 1em 3em;
+
+    input[type="text"], input[type="email"], input[type="password"], textarea {
+        margin-top: 10px;
+        width: 90%;
+        border: 1px solid #d6dce0;
+        border-radius: 0.35em;
+        padding: 0.5em 1em;
+    }
+
+    input[type="text"]{
+        height: 2em;
+    }
+    textarea {
+        min-height: 7em;
+    }
+    
+    input[type="submit"]{
+        background: transparent;
+        border: 1px solid #d6dce0;
+        border-radius: 1.5em;
+        padding: 0.5em 1.5em;
+
+        &:hover {
+            border: 1px solid $pelorous;
+            color: $pelorous;
+        }
+    }
+}
+
+
+/*********************
+ * POST CONTENT
+*********************/
+div#post_content {
+    padding: 5em 3em 1em 3em;
+}
 
 /*********************
  * FLASH ALERTS 
