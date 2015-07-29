@@ -11,10 +11,11 @@ class PostsController < ApplicationController
         @post = Post.new(post_params)
         if @post.save
             flash[:success] = "Successfully created post"
-            redirect_to(posts_path)
+            redirect_to(post_path(@post))
         else
             flash[:error] = "Could not save post"
             render action: :new
+            flash.discard(:error)
         end
     end
 

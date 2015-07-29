@@ -40,17 +40,17 @@ div#sidebar{
     /*category in sidebar*/
     li.category {
         font-weight: 700;
-        font-size: 0.7em;
+        font-size: 0.7rem;
         text-transform: uppercase;
         color: $pelorous;
     }
 
     ul{
-        margin-bottom: 1.5em;
+        margin-bottom: 1.5rem;
     }
 
     li {
-        padding: 0.5em 0;
+        padding: 0.5rem 0;
         a{
           color: $cascade;
           transition: all .4s ease;
@@ -68,24 +68,24 @@ div#header p,
 
 .header_button {
           color: $cascade;
-          font-size: 0.8em;
+          font-size: 0.8rem;
 }
 
 .read_button {
-    font-size: 0.7em;
+    font-size: 0.7rem;
     color: $shark;
 }
 
 .sign_in {
-    font-size: 0.8em;
+    font-size: 0.8rem;
 }
 
 .title{
     color: $shark;
-    font-size: 2.5em;
+    font-size: 2.5rem;
 } 
 .body {
-    color: $cascade;
+    color: $shark;
     font-size: 1.1rem;
     font-weight: 400;
     line-height: 1.75;
@@ -113,11 +113,11 @@ div#main_content {
 div#header{
     border-bottom: 1px solid #d6dce0;
     background: #f5f7f9;
-    padding: 0 3em;
+    padding: 0 3rem;
     position: fixed;
     top: 0;
     right: 0;
-    height: 3em;
+    height: 3rem;
     left: 251px;
 
     p {
@@ -132,19 +132,19 @@ div#header{
     
     div#header_buttons{
         float: right;
-        margin-top: 0.5em;
+        margin-top: 0.5rem;
     }
 
     .header_button{
         background: transparent;
         border: 1px solid #d6dce0;
-        border-radius: 1.5em;
-        margin-left: 0.5em;
+        border-radius: 1.5rem;
+        margin-left: 0.5rem;
         &:hover {
             border: 1px solid $pelorous;
             color: $pelorous;
         }
-        padding: 0.5em 1.5em;
+        padding: 0.5rem 1.5rem;
         display: inline-block;
     }
 }
@@ -162,22 +162,22 @@ div#sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 7.5em 0 0 0;
+    padding: 7.5rem 0 0 0;
     
     div#logo{
         position:absolute;
-        top: 3em;
-        right: 3em;
+        top: 3rem;
+        right: 3rem;
 
         img{
-            width: 3em;
+            width: 3rem;
         }
     }
     
     ul{
         list-style:none;
         text-align: right;
-        padding-right: 3em;
+        padding-right: 3rem;
     }
 
     li{
@@ -186,7 +186,7 @@ div#sidebar {
     .sign_in{
         position: absolute;
         top: 80%;
-        right: 3em;
+        right: 3rem;
     }
 }
 
@@ -198,7 +198,7 @@ div#sidebar {
 div.post_wrapper {
     border-bottom:  1px solid #d6dce0;
     border-radius: 4px;
-    padding: 3em 3em 1.5em 3em ;
+    padding: 3rem 3rem 1.5rem 3rem ;
 
     .title {
         margin: 0;
@@ -206,11 +206,11 @@ div.post_wrapper {
 
 .read_button {
         background: transparent;
-        padding: 0.5em 1.2em;
+        padding: 0.5rem 1.2rem;
         border: 1px solid $shark;
-        border-radius: 1.5em;
+        border-radius: 1.5rem;
         display: inline-block;
-        margin-top: 2em;
+        margin-top: 2rem;
 
         &:hover{
             border: 1px solid $pelorous;
@@ -225,28 +225,28 @@ div.post_wrapper {
  * NEW POST WRAPPER
 *********************/
 div#new_post_wrapper {
-    padding: 5em 3em 1em 3em;
+    padding: 3rem 3rem 1rem 3rem;
 
     input[type="text"], input[type="email"], input[type="password"], textarea {
         margin-top: 10px;
         width: 90%;
         border: 1px solid #d6dce0;
-        border-radius: 0.35em;
-        padding: 0.5em 1em;
+        border-radius: 0.35rem;
+        padding: 0.5rem 1rem;
     }
 
     input[type="text"]{
-        height: 2em;
+        height: 2rem;
     }
     textarea {
-        min-height: 7em;
+        min-height: 7rem;
     }
     
     input[type="submit"]{
         background: transparent;
         border: 1px solid #d6dce0;
-        border-radius: 1.5em;
-        padding: 0.5em 1.5em;
+        border-radius: 1.5rem;
+        padding: 0.5rem 1.5rem;
 
         &:hover {
             border: 1px solid $pelorous;
@@ -260,17 +260,19 @@ div#new_post_wrapper {
  * POST CONTENT
 *********************/
 div#post_content {
-    padding: 5em 3em 1em 3em;
+    padding: 3rem 3rem 1rem 3rem;
 }
 
 /*********************
  * FLASH ALERTS 
  ********************/
 div.alert {
+    width: 10rem;
+    margin: 3rem 0 0rem 3rem;
+    float: left;
     border: 2px solid #444;
     border-radius: 4px;
-    margin-bottom: 10px;
-    padding: 0 1em;
+    padding: 0.5rem 1rem;
 }
 
 div.success {
