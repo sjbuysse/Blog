@@ -16,7 +16,7 @@ describe "Creating posts" do
    it "successfully creates a post" do 
        create_post
 
-       expect(page.all("div.post_wrapper").count).to eq(1)
+       expect(Post.all.count).to eq(1)
        expect(page).to have_content("A new post")
        expect(page).to have_content("Successfully created post")
    end
@@ -25,7 +25,7 @@ describe "Creating posts" do
        it "doesn't create the post and shows an error message" do
        create_post title: ""
         
-       expect(page).to have_content("Could not save post")
+       expect(page).to have_content("Title can't be blank")
        end
    end
    
@@ -33,7 +33,7 @@ describe "Creating posts" do
        it "doesn't create the post and shows an error message" do
        create_post body: "This short"
         
-       expect(page).to have_content("Could not save post")
+       expect(page).to have_content("Body is too short")
        end
    end
 

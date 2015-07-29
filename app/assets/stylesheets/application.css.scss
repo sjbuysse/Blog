@@ -267,7 +267,7 @@ div#post_content {
  * FLASH ALERTS 
  ********************/
 div.alert {
-    width: 10rem;
+    width: 17rem;
     margin: 3rem 0 0rem 3rem;
     float: left;
     border: 2px solid #444;
@@ -283,8 +283,22 @@ div.success {
 div.error {
     border: 2px solid red;
     color: red; 
+    display: none;
     }
 
+/*********************
+ * VALIDATION MESSAGES 
+ ********************/
+div#errors {
+    color: tomato;
+    
+    h2 {
+        font-size: 1.2em;
+    }
+    li {
+        font-size: 1em;
+    }
+}
 
 
 /*********************
