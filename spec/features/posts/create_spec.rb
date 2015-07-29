@@ -10,7 +10,7 @@ describe "Creating posts" do
        click_link "New post"
        fill_in "post_title", with: options[:title]
        fill_in "post_body", with: options[:body]
-       click_button "Create post"
+       click_button "Save post"
     end
 
    it "successfully creates a post" do 
