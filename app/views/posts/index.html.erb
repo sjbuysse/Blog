@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-    <div id=<%=dom_id(post)%> class="post_wrapper"> 
+    <div id=<%=dom_id(post)%> class="post_wrapper group"> 
         <h2 class="title">
           <%= post.title %>
         </h2>
@@ -9,5 +9,7 @@
         </p>
         
         <%= link_to "Read on", post_path(post), class: "read_button"%>
+        <%= button_to "Delete post", post_path(post), method: :delete, class: "delete_button", data: {confirm: "Are you sure?"} %>
+
     </div>
 <%end%>

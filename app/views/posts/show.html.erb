@@ -1,5 +1,8 @@
+<%= link_to "Edit post", edit_post_path(@post), class: "edit_button" %>
+<%= button_to "Delete post", post_path(@post), method: :delete, class: "delete_button", data: {confirm: "Are you sure?"} %>
+
 <div id="post_content">
-    <h1 class="title">
+       <h1 class="title">
       <%= @post.title %>
     </h1>
      
@@ -8,8 +11,6 @@
     </p>
      
     <p class="body">
-      <%= @post.body %>
+      <%= simple_format(@post.body) %>
     </p>
-    <%= link_to "Edit post", edit_post_path(@post), class: "edit_button" %>
-    <%= button_to "Delete post", post_path(@post), method: :delete, class: "delete_button", data: {confirm: "Are you sure?"} %>
 </div>
