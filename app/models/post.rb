@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-    has_many :comments do 
+    has_many :comments, dependent: :destroy do 
         def persisted
             select(&:persisted?)
         end
