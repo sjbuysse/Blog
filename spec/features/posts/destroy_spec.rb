@@ -8,7 +8,9 @@ describe "Deleting a post" do
             within(dom_id_for(post)) do
                 click_link "Read on"
             end
-            click_button "Delete post"
+            within("div.post_content") do 
+                click_button "Delete"
+            end
 
             expect(page).to have_content("Successfully deleted post")
             expect(Post.all.count).to eq(0)

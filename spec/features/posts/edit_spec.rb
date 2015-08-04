@@ -10,7 +10,9 @@ describe "Editting a post" do
         within(dom_id_for(post)) do
             click_link "Read on"
         end
-        click_link "Edit post"
+        within("div.post_content") do 
+            click_link "Edit"
+        end
         fill_in "post_title", with: options[:title] 
         fill_in "post_body", with: options[:body] 
         click_button "Save post"
