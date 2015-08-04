@@ -8,8 +8,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="sidebar">
-    <div id="logo">
+<div class="sidebar">
+    <div class="logo">
         <%= link_to root_path do %>
             <%= image_tag("logo.svg") %>
         <% end%>
@@ -29,13 +29,13 @@
     <p class="sign_in">Admin login</p>
 </div>
 
-<div id="main_content">
-    <div id="header" class="group">
+<div class="main_content">
+    <div class="header group">
         <p>All posts</p>
 
-        <div id="header_buttons">
-            <%= link_to "New post", new_post_path, class: "header_button" %>
-            <button class="header_button">Log out</button>
+        <div class="header_buttons">
+            <%= link_to "New post", new_post_path, class: "new-post-button" %>
+            <button class="log-out-button">Log out</button>
         </div>
     </div>
 

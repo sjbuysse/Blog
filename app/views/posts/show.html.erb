@@ -1,16 +1,21 @@
-<%= link_to "Edit post", edit_post_path(@post), class: "edit_button" %>
-<%= button_to "Delete post", post_path(@post), method: :delete, class: "delete_button", data: {confirm: "Are you sure?"} %>
-
-<div id="post_content">
+<div class="post_content">
        <h1 class="title">
       <%= @post.title %>
     </h1>
      
     <p class="date">
-      Submitted <%= time_ago_in_words(@post.created_at) %> Ago
+      Submitted <%= time_ago_in_words(@post.created_at) %> ago
     </p>
-     
-    <p class="body">
-      <%= simple_format(@post.body) %>
-    </p>
+    <%= link_to "Edit", edit_post_path(@post), class: "in-text-edit-button" %>
+    <%= button_to "Delete", post_path(@post), method: :delete, class: "in-text-delete-button", data: {confirm: "Are you sure?"} %>
+    
+    <%= simple_format(@post.body, class: "body") %>
+</div>
+
+<div class="comments">
+    <h2><%= pluralize(@post.comments.count, "comment") %></h2>
+    <%#Made a persisted method in the posts model, to avoid new (not saved) comments being renderd with _comment.html.erb%>
+    <%= render @post.comments.persisted %>
+    <h3>Add a comment:</h3>
+    <%= render "comments/form" %>
 </div>
