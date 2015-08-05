@@ -9,7 +9,9 @@
         </p>
         
         <%= link_to "Read on", post_path(post), class: "read-on-button"%>
+        <% if user_signed_in?%>
         <%= button_to "Delete post", post_path(post), method: :delete, class: "delete-button", data: {confirm: "Are you sure?"} %>
+        <%end%>
 
     </div>
 <%end%>

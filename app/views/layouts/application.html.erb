@@ -26,17 +26,21 @@
         <li><a href="mailto:buysse.simon@gmail.com">Email</a></li>
     </ul>
 
-    <p class="sign_in">Admin login</p>
+    <% if !user_signed_in? %>
+    <%=link_to "Admin login", new_user_session_path, class:"sign_in"%>
+    <%end%>
 </div>
 
 <div class="main_content">
     <div class="header group">
         <p>All posts</p>
 
+        <% if user_signed_in?%>
         <div class="header_buttons">
             <%= link_to "New post", new_post_path, class: "new-post-button" %>
-            <button class="log-out-button">Log out</button>
+            <%= button_to "Log out", destroy_user_session_path , method: :delete, class: "log-out-button" %>
         </div>
+        <%end%>
     </div>
 
     <div class="group">

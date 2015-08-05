@@ -150,6 +150,11 @@ font-size:0.9rem;
     div.header_buttons{
         float: right;
         margin-top: 0.5rem;
+        
+        .new-post-button,
+        .button_to{
+            display:inline-block;
+        }
     }
 }
 
@@ -270,9 +275,10 @@ div.post_wrapper {
 
 
 /*********************
- * NEW POST WRAPPER
+ * PAGE WRAPPER, is used at the new post page and new user page
 *********************/
-div#new_post_wrapper {
+
+div.page-wrapper{
     padding: 3rem 3rem 1rem 3rem;
 }
 
