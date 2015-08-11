@@ -1,0 +1,297 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require normalize
+ *= require posts
+ *= require_self
+ */
+/*********************
+ * TYPOGRAPHY 
+ ********************/
+html, body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+.title {
+  color: #2a2f35;
+  font-size: 2.5rem; }
+
+.body {
+  color: #2a2f35;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.75;
+  clear: left; }
+
+.date {
+  color: #2a2f35;
+  font-weight: 400;
+  font-size: 0.9rem; }
+
+/*********************
+ * BUTTONS 
+ ********************/
+.create-post-button,
+.create-comment,
+.delete-comment,
+.log-out-button,
+.new-post-button,
+.read-on-button,
+.delete-button,
+.button {
+  font-size: 0.8rem;
+  background: transparent;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid #2a2f35;
+  border-radius: 1.5rem; }
+
+/*Button that looks like text and is separated by a border on the left*/
+.in-text-delete-button,
+.in-text-edit-button,
+.floating-text-button {
+  border: none;
+  border-left: 1px solid #2a2f35;
+  color: #2a2f35;
+  font-weight: 400;
+  font-size: 0.9rem;
+  background-color: transparent;
+  float: left;
+  margin: 1em 0 1em 0.5em;
+  padding-left: 0.5em; }
+
+/*Turns a text button blue-ish when hovered over*/
+.create-post-button:hover,
+.create-comment:hover,
+.in-text-edit-button:hover,
+.new-post-button:hover,
+.read-on-button:hover,
+.blue-hover-text:hover {
+  color: #33acb7; }
+
+/*Turns a text button tomato-ish when hovered over*/
+.delete-comment:hover,
+.in-text-delete-button:hover,
+.log-out-button:hover,
+.delete-button:hover,
+.tomato-hover-text:hover {
+  color: tomato; }
+
+/*Turns a button blue-ish when hovered over*/
+.create-post-button:hover,
+.create-comment:hover,
+.new-post-button:hover,
+.read-on-button:hover,
+.blue-hover-border:hover {
+  border: 1px solid #33acb7; }
+
+/*Turns a button tomato-ish when hovered over*/
+.delete-comment:hover,
+.log-out-button:hover,
+.delete-button:hover,
+.tomato-hover-border:hover {
+  border: 1px solid tomato; }
+
+/*a light grey button, with somewhat smaller font*/
+.log-out-button,
+.new-post-button,
+.light-grey-smaller-button {
+  color: #95A5A6;
+  border: 1px solid #d6dce0; }
+
+/*********************
+ * HEADER 
+ ********************/
+.header {
+  border-bottom: 1px solid #d6dce0;
+  background: #f5f7f9;
+  padding: 0 3rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 3rem;
+  left: 251px; }
+  .header p {
+    display: inline-block;
+    color: #95A5A6; }
+  .header div.header_buttons {
+    float: right;
+    margin-top: 0.5rem; }
+    .header div.header_buttons .new-post-button,
+    .header div.header_buttons .button_to {
+      display: inline-block; }
+
+/*********************
+ * SIDEBAR 
+ ********************/
+div.sidebar {
+  border-right: 1px solid #d6dce0;
+  background-color: #f5f7f9;
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 7.5rem 0 0 0; }
+  div.sidebar div.logo {
+    position: absolute;
+    top: 3rem;
+    right: 3rem; }
+    div.sidebar div.logo img {
+      width: 3rem; }
+  div.sidebar ul {
+    list-style: none;
+    text-align: right;
+    padding-right: 3rem;
+    margin-bottom: 1.5rem; }
+  div.sidebar li {
+    padding: 0.5rem 0; }
+    div.sidebar li a {
+      color: #95A5A6;
+      transition: all .4s ease; }
+      div.sidebar li a:hover {
+        color: #33acb7; }
+  div.sidebar li.category {
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #33acb7; }
+  div.sidebar .sign_in {
+    position: absolute;
+    top: 80%;
+    right: 3rem;
+    color: #95A5A6;
+    font-size: 0.8rem; }
+  div.sidebar .active a {
+    color: #33acb7; }
+
+/*********************
+* MAIN CONTENT
+ ********************/
+div.main_content {
+  margin-left: 251px;
+  margin-top: 3rem; }
+  div.main_content input[type="text"], div.main_content input[type="email"], div.main_content input[type="password"], div.main_content textarea {
+    margin-top: 10px;
+    width: 90%;
+    border: 1px solid #ACB0B4;
+    border-radius: 0.35rem;
+    padding: 0.5rem 1rem; }
+  div.main_content input[type="text"] {
+    height: 2rem; }
+  div.main_content textarea {
+    min-height: 12rem; }
+
+/*********************
+ * POST WRAPPER, each post in the index gets wrapped in one of these divs
+ ********************/
+div.post_wrapper {
+  border-bottom: 1px solid #d6dce0;
+  border-radius: 4px;
+  padding: 3rem 3rem 1.5rem 3rem; }
+  div.post_wrapper .title {
+    margin: 0; }
+  div.post_wrapper .read-on-button,
+  div.post_wrapper .delete-button,
+  div.post_wrapper .float-left-smaller-button {
+    margin-top: 2rem;
+    margin-right: 1rem;
+    float: left;
+    font-size: 0.8rem; }
+
+/*********************
+ * PAGE WRAPPER, is used at the new post page and new user page
+*********************/
+div.page-wrapper {
+  padding: 3rem 3rem 1rem 3rem; }
+
+/*********************
+ * POST CONTENT
+*********************/
+div.post_content {
+  padding: 3rem 3rem 1rem 3rem;
+  width: 90%; }
+  div.post_content .date {
+    float: left; }
+
+h1.title {
+  clear: left; }
+
+div.comments {
+  margin: 3rem 3rem 1rem 0;
+  padding-left: 3rem; }
+  div.comments h2 {
+    border-bottom: 1px solid #d6dce0; }
+  div.comments h3 {
+    margin-top: 2rem; }
+  div.comments div.comment_wrapper {
+    float: left; }
+  div.comments p.comment_name {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    margin: 1rem 0 0 0; }
+  div.comments p.comment_body {
+    font-size: 1.1rem;
+    margin: 0.3rem 0 0 0; }
+  div.comments p.comment_date {
+    font-size: 0.8rem; }
+  div.comments input[type="text"], div.comments textarea {
+    width: 50%; }
+  div.comments .delete-comment {
+    margin-top: 1rem;
+    float: right; }
+
+/*********************
+ * FLASH ALERTS 
+ ********************/
+div.alert {
+  width: 17rem;
+  margin: 2rem 0 0rem 3rem;
+  float: left;
+  border: 2px solid #444;
+  border-radius: 4px;
+  padding: 0.5rem 1rem; }
+
+div.success {
+  border: 2px solid green;
+  color: green; }
+
+div.error {
+  border: 2px solid red;
+  color: red; }
+
+/*********************
+ * VALIDATION MESSAGES 
+ ********************/
+div.errors {
+  color: tomato; }
+  div.errors h2 {
+    font-size: 1.2em;
+    border: none; }
+  div.errors li {
+    font-size: 1em; }
+
+/*********************
+ * CLEARFIX 
+ ********************/
+.group:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/*# sourceMappingURL=application.css.css.map */
