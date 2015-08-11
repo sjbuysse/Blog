@@ -1,56 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BlogMackenzie</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900' rel='stylesheet' type='text/css'>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+    <title>Stories about exploration, working abroad and cheese.</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700|Great+Vibes' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400italic' rel='stylesheet' type='text/css'>
+    <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="sidebar">
-    <div class="logo">
-        <%= link_to root_path do %>
-            <%= image_tag("logo.svg") %>
-        <% end%>
-    </div>
-    <ul>
-        <li class="category">Website</li>
-        <li><%= link_to "Blog", root_path %></li>
-        <li><%= link_to "About", about_path %></li>
-    </ul>
-    <ul>
-        <li class="category">Social</li>
-        <li><a href="https://instagram.com/simon.hashtag/">Instagram</a></li>
-        <li><a href="https://github.com/sjbuysse">GitHub</a></li>
-        <li><a href="mailto:buysse.simon@gmail.com">Email</a></li>
-    </ul>
-
-    <% if !user_signed_in? %>
-    <%=link_to "Admin login", new_user_session_path, class:"sign_in"%>
-    <%end%>
-</div>
-
-<div class="main_content">
-    <div class="header group">
-        <p>All posts</p>
-
-        <% if user_signed_in?%>
-        <div class="header_buttons">
-            <%= link_to "New post", new_post_path, class: "new-post-button" %>
-            <%= button_to "Log out", destroy_user_session_path , method: :delete, class: "log-out-button" %>
-        </div>
-        <%end%>
-    </div>
-
-    <div class="group">
-        <% flash.each do |type, message|%>
-        <div class="alert flash <%=type%>">
-            <%= message %>
-        </div>
-        <%end%>
-    </div>  
-
     <%= yield %>
 </div>
 </body>

@@ -1,0 +1,248 @@
+$navbar-height: 5rem;
+$navbar-title-size: 3rem;
+$navbar-bottom-padding: ($navbar-height - $navbar-title-size)/2;
+$back-color: #E7E7E7;
+$text-color: #8A8A8A;
+$shark: #2a2f35;
+$darker-title: #464646;
+@mixin white-text-black-back{
+    color: white;
+    background: rgba(0,0,20, 0.5);
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+@mixin icon ($margin-left, $margin-top){
+    position: relative;
+    margin-left: $margin-left;
+    &::before{
+        font-family: 'icomoon';
+        font-style: normal;
+        position: absolute;
+        left: -1.2rem;
+        top: $margin-top;
+    }
+}
+@mixin center-page{
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+html, body{
+    font-family: 'Raleway', sans-serif;
+    background-color: $back-color;
+    color: $shark;
+    letter-spacing: 0.0625rem;
+    word-spacing: 0.0625rem;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 500;
+  color: $darker-title;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.navbar {
+    background: $back-color;
+    height: $navbar-height;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 0;
+    h1{
+        display: inline-block;
+        font-size: $navbar-title-size;
+        margin: 0;
+        padding: $navbar-bottom-padding;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        bottom: $navbar-bottom-padding;
+        right: 0;
+    }
+    li {
+        text-transform: uppercase;
+        font-weight: 600;
+        text-align: center;
+        float: right;
+        padding-right: 2rem;
+    }
+}
+
+/**********************
+* ARTICLE
+**********************/
+.article-nav{
+    ul {
+        margin: 2rem 3rem;
+        padding: 0;
+    }
+    li{
+        list-style: none;
+        margin: 0;
+        float:left;
+        &:first-child{
+            width: 30%;
+        }
+        &:nth-child(2){
+            width: 40%;
+            text-align: center;
+        }
+        &:nth-child(3){
+            width: 30%;
+            text-align: right;
+        }
+ 
+    }
+}
+.article {
+    padding-top : 1px;
+    @include center-page;
+    h1 {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 5rem;
+    }
+    p{
+        line-height: 1.75;
+    }
+    .article-info{
+        text-align: center;
+        margin: 1rem auto;
+        h5{
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 500;
+            font-style:italic;
+            font-family: 'PT Sans', sans-serif;
+            &.comments{
+                @include icon(1.7rem, 2px);
+              }
+            &.likes{
+                @include icon(2.7rem, 0);
+            }
+        }
+    }
+    
+}
+
+/**********************
+* COMMENTS
+*********************/
+.comments{
+    @include center-page;
+    padding-bottom: 3rem;
+    h1 {
+        font-size: 2rem;
+        border-bottom: 1px solid $shark;
+        border-top: 1px solid $shark;
+        padding: 2rem 0;
+        text-align: center;
+        /*text-transform: uppercase;*/
+    }
+    .comment-wrapper {
+        float:left;
+    }
+
+    h3 {
+        margin-top: 2rem;
+    }
+   p.comment-name {
+        text-transform: uppercase;
+        color: $darker-title;
+        font-size: 0.7rem;
+        margin: 1rem 0 0 0;
+    }
+    p.comment-body{
+        font-size: 1.1rem;
+        margin: 0.3rem 0 0 0;
+    }
+    p.comment-date {
+        font-size: 0.8rem;
+    }
+}
+
+/**********************
+* TILE LAYOUT
+**********************/
+
+$tile-width: 23%;
+$tile-margin: (100% - (4 * $tile-width))/3;
+
+.grid{
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+#grid[data-columns]::before {
+    content: '4 .column.size-1of4';
+}
+
+.tile {
+    background-color: white;
+    padding-bottom: 1px;
+    margin-bottom: 2rem;
+    box-shadow: 5px 7px 20px -8px rgba(0,0,0, .8);
+    overflow: hidden;
+    img {
+        width: 100%;
+        display: block;
+    }
+    h2{
+        text-transform: uppercase;
+        margin-left: 1rem;
+    }
+    p {
+        margin: 1rem;
+    }
+}
+.column { 
+    float: left;
+    & + & {
+        margin-left: $tile-margin;
+    }
+}
+.size-1of4 { 
+    width: $tile-width;  
+}
+
+.hero-image {
+    background-image: url(waterland.jpg);
+	height: 100vh;	
+    background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 85% 66%;
+	margin: 0;
+    .motivational{
+        position: absolute;
+        top: 20%;
+        right: 10%;
+        h1, h2 {
+            color: white;
+            font-family: Tangerine, cursive;
+            font-weight: 500;
+            font-size: 3rem;
+            text-shadow: 1px 1px 7px rgb(0,0,0); 
+            margin: 0.5rem;
+        }
+        h2 {
+            float: right;
+        }
+    }
+}
+
+/*********************
+ * CLEARFIX 
+ ********************/
+.clearfix:after { 
+content: ""; 
+display: table; 
+clear: both; 
+}

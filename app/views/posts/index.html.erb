@@ -1,17 +1,38 @@
-<% @posts.each do |post| %>
-    <div id=<%=dom_id(post)%> class="post_wrapper group"> 
-        <h2 class="title">
-          <%= post.title %>
-        </h2>
-         
-        <p class="date">
-          <%=post.created_at.strftime("%B %d, %Y")%> 
-        </p>
-        
-        <%= link_to "Read on", post_path(post), class: "read-on-button"%>
-        <% if user_signed_in?%>
-        <%= button_to "Delete post", post_path(post), method: :delete, class: "delete-button", data: {confirm: "Are you sure?"} %>
-        <%end%>
-
+<div class="navbar"> 
+    <a href="#top"><h1>Playbirdies</h1></a>
+    <ul>
+        <li><a href="mailto:buysse.simon@gmail.com">Contact us</a></li>
+        <li><a href="https://instagram.com/simon.hashtag/">Instagram</a></li>
+        <li><%= link_to "Playbirdies 101", about_path %></li>
+        <li><a href="index.html#grid">Blog</a></li>
+    </ul>
+</div>
+<div id="top" class="hero-image">
+    <div class="motivational">
+        <h1>Not all those who wander are lost.</h1>
+        <h2>~ Tolkien</h2>
     </div>
-<%end%>
+</div>
+<div id="grid" data-columns class="grid">
+
+    <% @posts.each do |post| %>
+        <div id=<%=dom_id(post)%> class="tile"> 
+            <%= link_to post_path(post) do %>
+            <h2><%= post.title %></h2>
+            <% end %> 
+            <p><%= post.body  %></p>
+       </div>
+    <%end%>
+
+</div>
+
+<div class="clearfix">
+    <% flash.each do |type, message|%>
+    <div class="alert flash <%=type%>">
+        <%= message %>
+    </div>
+    <%end%>
+</div>  
+
+<%= javascript_include_tag 'exclusive/salvattore.min' %>
+<%= javascript_include_tag 'exclusive/scroll' %>
