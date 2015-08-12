@@ -255,6 +255,24 @@ $tile-margin: (100% - (4 * $tile-width))/3;
     }
 }
 
+.anchor {
+    display:block;
+    height: $navbar-height;
+    margin-top: -$navbar-height;
+    visibility: hidden;
+}
+
+/*********************
+ * ABOUT 
+ ********************/
+.about-page{
+    @include center-page;
+    margin-top: $navbar-height;
+}
+
+
+
+
 /*********************
  * CLEARFIX 
  ********************/

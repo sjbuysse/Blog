@@ -1,0 +1,62 @@
+$shark: #2a2f35;
+$cascade: #95A5A6;
+$pelorous: #33acb7;
+$geyser: #d6dce0;
+/*********************
+ * BUTTONS 
+ ********************/
+
+.button{
+    font-size: 0.8rem;
+    background: transparent;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid $shark;
+    border-radius: 1.5rem;
+}
+/*Button that looks like text and is separated by a border on the left*/
+.in-text-delete-button,
+.in-text-edit-button,
+.floating-text-button{
+    border: none;
+    border-left: 1px solid $shark;
+    color: $shark;
+    font-weight: 400;
+    font-size:0.9rem;
+    background-color: transparent;
+    float: left;
+    margin: 1em 0 1em 0.5em;
+    padding-left: 0.5em;
+}
+/*Turns a text button blue-ish when hovered over*/
+.blue-hover-text:hover{
+            color: $pelorous;
+}
+/*Turns a text button tomato-ish when hovered over*/
+.tomato-hover-text:hover{
+            color: tomato;
+}
+/*Turns a button blue-ish when hovered over*/
+.blue-hover-button:hover{
+            color: $pelorous;
+            border: 1px solid $pelorous;
+}
+/*Turns a button tomato-ish when hovered over*/
+.tomato-hover-button:hover{
+            color: tomato;
+            border: 1px solid tomato;
+}
+/*a light grey button, with somewhat smaller font*/
+.light-grey-smaller-button{
+        color: $cascade;
+        border: 1px solid $geyser;
+}
+
+label.thumbnail {
+    input[type="file"]{
+        display: none;
+    }
+}
+.tile .button {
+    float: left;
+    margin: 0.2rem;
+}

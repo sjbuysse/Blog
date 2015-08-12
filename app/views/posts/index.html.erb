@@ -1,10 +1,10 @@
 <div class="navbar"> 
-    <a href="#top"><h1>Playbirdies</h1></a>
+    <a href="#top" class="scroll"><h1>Playbirdies</h1></a>
     <ul>
         <li><a href="mailto:buysse.simon@gmail.com">Contact us</a></li>
         <li><a href="https://instagram.com/simon.hashtag/">Instagram</a></li>
         <li><%= link_to "Playbirdies 101", about_path %></li>
-        <li><a href="index.html#grid">Blog</a></li>
+        <li><a href="index.html#anchor-grid" class="scroll">Blog</a></li>
     </ul>
 </div>
 <div id="top" class="hero-image">
@@ -13,6 +13,7 @@
         <h2>~ Tolkien</h2>
     </div>
 </div>
+<span class="anchor" id="anchor-grid"></span>
 <div id="grid" data-columns class="grid">
     <%= render @posts %>
 </div>
@@ -26,4 +27,3 @@
 </div>  
 
 <%= javascript_include_tag 'exclusive/salvattore.min' %>
-<%= javascript_include_tag 'exclusive/scroll' %>

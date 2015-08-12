@@ -1,7 +1,7 @@
 <div class="article-nav"> 
     <ul>
         <li class="icon-chevron-small-left">Title of the previous...</li>
-        <li class="icon-grid">Back to stories</li>
+        <li class="icon-grid"><%= link_to "Back to stories", root_path(anchor: "anchor-grid") %></li>
         <li class="icon-chevron-small-right">Title of the next story...</li>
     </ul>
 </div>
@@ -10,7 +10,7 @@
     <div class="article-info">
         <h5 class="date-author">Submitted <%= time_ago_in_words(@post.created_at)%> ago by <%= @post.author %></h5>
         <h5 class="likes icon-shaka">37</h5>
-        <h5 class="icon-chat comments"><%= @post.comments.count %></h5>
+        <a href="#comments" class="scroll"><h5 class="icon-chat comments"><%= @post.comments.count %></h5></a>
     </div>
     <p><%= @post.body %></p>
 <div class="banner">
@@ -28,7 +28,7 @@
 </p><p> 
 Een derde en voorlopig laatste opmerkelijke karaktertrek van de Colombianen is dat ze geen ´nee´ kennen. Alles wat je vraagt of verzoekt heeft een positief antwoord. Ze verwachten dit ook van u. Als ze je vragen om te dansen, zeg je ´ja´. Als ze je uitnodigen om naar de kerk te gaan, antwoord je ´graag´. Als ze je een bord met butifarra aanbieden, een gerecht waar zogezegd kat in verwerkt zou worden, eet je dit op tot de laatste kruimel. Een excellente mannier om uit de westerse comfortzone te treden.</p>
 </div>
-<div class="comments clearfix">
+<div class="comments clearfix" id="comments">
     <h1><%= pluralize(@post.comments.count, "comment") %></h1>
     <%= render @post.comments.persisted %>
     <h3>Add a comment:</h3>

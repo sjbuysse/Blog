@@ -1,17 +1,11 @@
 $(document).ready(function(){
-    var navbarHeight = $(".navbar").css("height");
-    navbarHeight = navbarHeight.replace("px","");
-    $('a[href*="#"]').on('click', function(event) {
+    $('a[href*="#"][class="scroll"]').on('click', function(event) {
         var target = $(this).attr('href').replace("index.html", "");
         var $target = $(target);
-        console.log($target.length)
         if( $target.length ) {
             event.preventDefault();
-            var difference = ($target.offset().top  - navbarHeight);
-            if (target == "#top") {
-                difference = 0;
-            }
-            console.log(difference);
+            var difference = $target.offset().top;
+
             $('html, body').animate({
                 //offset().top returns the offset of the element that calls it relative to the top.
                 //we call the scrollTop on the html and body element (use both elements for browser support)

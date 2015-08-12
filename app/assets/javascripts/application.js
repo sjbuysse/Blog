@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require turbolinks
+//= require scroll
 //= require unslider
 //= require unslider-options
 //= require_directory .
