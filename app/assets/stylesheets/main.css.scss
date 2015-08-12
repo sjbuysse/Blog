@@ -44,6 +44,19 @@ a {
     text-decoration: none;
     color: inherit;
 }
+input[type="text"], input[type="email"], input[type="password"], textarea {
+    margin-top: 10px;
+    width: 90%;
+    border: 1px solid $shark;
+    border-radius: 0.35rem;
+    padding: 0.5rem 1rem;
+}
+input[type="text"]{
+    height: 2rem;
+}
+textarea {
+    min-height: 12rem;
+}
 .navbar {
     background: $back-color;
     height: $navbar-height;
@@ -166,6 +179,9 @@ a {
     }
     p.comment-date {
         font-size: 0.8rem;
+    }
+    input[type="text"], textarea {
+                width: 50%;
     }
 }
 
