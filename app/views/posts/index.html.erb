@@ -14,16 +14,7 @@
     </div>
 </div>
 <div id="grid" data-columns class="grid">
-
-    <% @posts.each do |post| %>
-        <div id=<%=dom_id(post)%> class="tile"> 
-            <%= link_to post_path(post) do %>
-            <h2><%= post.title %></h2>
-            <% end %> 
-            <p><%= post.body  %></p>
-       </div>
-    <%end%>
-
+    <%= render @posts %>
 </div>
 
 <div class="clearfix">

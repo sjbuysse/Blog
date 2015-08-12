@@ -8,7 +8,7 @@
 <div class="article">
     <h1><%= @post.title %> </h1>
     <div class="article-info">
-        <h5 class="date-author">Submitted 5 days ago by Simon</h5>
+        <h5 class="date-author">Submitted <%= time_ago_in_words(@post.created_at)%> ago by Simon</h5>
         <h5 class="likes icon-shaka">37</h5>
         <h5 class="icon-chat comments"><%= @post.comments.count %></h5>
     </div>
@@ -29,34 +29,7 @@
 Een derde en voorlopig laatste opmerkelijke karaktertrek van de Colombianen is dat ze geen ´nee´ kennen. Alles wat je vraagt of verzoekt heeft een positief antwoord. Ze verwachten dit ook van u. Als ze je vragen om te dansen, zeg je ´ja´. Als ze je uitnodigen om naar de kerk te gaan, antwoord je ´graag´. Als ze je een bord met butifarra aanbieden, een gerecht waar zogezegd kat in verwerkt zou worden, eet je dit op tot de laatste kruimel. Een excellente mannier om uit de westerse comfortzone te treden.</p>
 </div>
 <div class="comments clearfix">
-    <h1>5 Comments</h1>
-    <div class="comment-wrapper">
-        <p class="comment-name"><strong>Annemie</strong></p>
-        <p class="comment-body">Ziet er superleuk uit daar</p>
-        <p class="comment-date">14 days ago</p>
-    </div>
-</div>
-
-
-<div class="post_content">
-       <h1 class="title">
-      <%= @post.title %>
-    </h1>
-     
-    <p class="date">
-      Submitted <%= time_ago_in_words(@post.created_at) %> ago
-    </p>
-    <% if user_signed_in?%>
-    <%= link_to "Edit", edit_post_path(@post), class: "in-text-edit-button" %>
-    <%= button_to "Delete", post_path(@post), method: :delete, class: "in-text-delete-button", data: {confirm: "Are you sure?"} %>
-    <%end%> 
-    
-    <%= simple_format(@post.body, class: "body") %>
-</div>
-
-<div class="comments">
-    <h2><%= pluralize(@post.comments.count, "comment") %></h2>
-    <%#Made a persisted method in the posts model, to avoid new (not saved) comments being renderd with _comment.html.erb%>
+    <h1><%= pluralize(@post.comments.count, "comment") %></h1>
     <%= render @post.comments.persisted %>
     <h3>Add a comment:</h3>
     <%= render "comments/form" %>
