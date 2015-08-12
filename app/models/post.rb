@@ -5,6 +5,8 @@ class Post < ActiveRecord::Base
         end
     end
 
+    has_attached_file :thumb, 
+
     validates :title, presence: true, length: {minimum: 3}
     validates :body, presence: true, length: {minimum: 15}
     validates :author, presence: true
