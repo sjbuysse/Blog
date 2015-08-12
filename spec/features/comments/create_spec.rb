@@ -1,14 +1,14 @@
 require "spec_helper.rb"
 
 describe "Creating a comment" do
-    let!(:post) {Post.create(title:"A post for comments", body:"And there shall be comments!")}
+    let!(:post) {Post.create(title:"A post for comments", body:"And there shall be comments!", author:"Simon")}
     def create_comment(options={})
         options[:name] ||= "Eline"
         options[:body] ||= "Looks like heaven over there, I love it"
        
         visit "/posts"
         within(dom_id_for(post)) do
-            click_link "Read on"
+            click_link post.title
         end
 
         fill_in "comment_name", with: options[:name] 

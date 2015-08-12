@@ -8,7 +8,7 @@
 <div class="article">
     <h1><%= @post.title %> </h1>
     <div class="article-info">
-        <h5 class="date-author">Submitted <%= time_ago_in_words(@post.created_at)%> ago by Simon</h5>
+        <h5 class="date-author">Submitted <%= time_ago_in_words(@post.created_at)%> ago by <%= @post.author %></h5>
         <h5 class="likes icon-shaka">37</h5>
         <h5 class="icon-chat comments"><%= @post.comments.count %></h5>
     </div>

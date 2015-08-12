@@ -5,14 +5,14 @@ describe "Viewing posts" do
         it "displays no posts" do
             expect(Post.all.count).to eq(0)
             visit "/posts" 
-            expect(page.all("div.post_wrapper").count).to eq(0)
+            expect(page.all("div.tile").count).to eq(0)
         end
     end
     context "there are posts" do
         it "displays all posts" do
-            post = Post.create(title: "My first post", body: "This is some test text")
+            post = Post.create(title: "My first post", body: "This is some test text", author: "Simon")
             visit "/posts" 
-            expect(page.all("div.post_wrapper").count).to eq(1)
+            expect(page.all("div.tile").count).to eq(1)
         end
     end
 end
