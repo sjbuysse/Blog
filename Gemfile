@@ -31,6 +31,8 @@ gem 'devise', '~> 3.5.1'
 gem "paperclip", "~> 4.3"
 # for rendering markdown
 gem "kramdown", "~> 1.8"
+#for rendering safe templates 
+gem "liquid"
 
 
 

@@ -3,7 +3,8 @@ module ApplicationHelper
         options = {
         }
         #the following parses the text into kramdown syntax which is based on Markdown and easily written to html afterwards
-        kramdown = Kramdown::Document.new(text, options)
+        markdown = Liquid::Template.parse(text).render
+        kramdown = Kramdown::Document.new(markdown, options)
         kramdown.to_html.html_safe
     end
 
