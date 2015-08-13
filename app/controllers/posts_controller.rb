@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show] 
+    before_action :find_post, only: [:show, :edit, :update, :thumbnail, :destroy]
 
     def index
         @posts = Post.descending
@@ -22,16 +23,13 @@ class PostsController < ApplicationController
     end
 
     def show
-        @post = Post.find(params[:id])
         @comment = @post.comments.new
     end
 
     def edit
-        @post = Post.find(params[:id])
     end
 
     def update
-        @post = Post.find(params[:id])
         if @post.update(post_params)
             flash[:success] = "Successfully updated post"
             redirect_to post_path(@post)
@@ -40,8 +38,12 @@ class PostsController < ApplicationController
         end
     end
 
+    def thumbnail
+        @post.update(post_params)
+        redirect_to :back
+    end
+
     def destroy
-        @post = Post.find(params[:id])
         @post.destroy
         
         flash[:success] = "Successfully deleted post"
@@ -49,6 +51,10 @@ class PostsController < ApplicationController
     end
 
     private
+    def find_post
+        @post = Post.find(params[:id])
+    end
+
     def post_params
         params.require(:post).permit(:title, :body, :thumb)
     end
