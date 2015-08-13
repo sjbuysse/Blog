@@ -80,6 +80,7 @@ GEM
       railties (>= 3.1.0)
       turbolinks
     json (1.8.3)
+    kramdown (1.8.0)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -127,7 +128,6 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
-    redcarpet (3.3.2)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     rspec-collection_matchers (1.1.2)
@@ -189,9 +189,9 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  kramdown (~> 1.8)
   paperclip (~> 4.3)
   rails (= 4.2.0)
-  redcarpet (~> 3.3.2)
   rspec-rails (~> 2.99.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
@@ -199,6 +199,3 @@ DEPENDENCIES
   sqlite3
   turbolinks
   uglifier (>= 1.3.0)
-
-BUNDLED WITH
-   1.10.3
