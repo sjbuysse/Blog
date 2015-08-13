@@ -6,23 +6,19 @@
     </ul>
 </div>
 <div class="article">
+    <% if user_signed_in? %>
+        <div class="top-buttons">
+        <%= link_to "Edit", edit_post_path(@post), class: "button blue-hover-button" %>
+        <%= button_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?"  }, class: "button tomato-hover-button" %>
+        </div>
+    <% end %>
     <h1><%= @post.title %> </h1>
     <div class="article-info">
         <h5 class="date-author">Submitted <%= time_ago_in_words(@post.created_at)%> ago by <%= @post.author %></h5>
         <h5 class="likes icon-shaka">37</h5>
         <a href="#comments" class="scroll"><h5 class="icon-chat comments"><%= @post.comments.count %></h5></a>
     </div>
-    <p><%= @post.body %></p>
-<div class="banner">
-    <a href="#" class="unslider-arrow prev icon-chevron-with-circle-left"></a>
-    <a href="#" class="unslider-arrow next icon-chevron-with-circle-right"></a>
-    <ul>
-        <li style="background-image: url(<%= asset_path 'hero.jpg' %>);">
-       </li>
-       <li style="background-image: url(<%= asset_path 'waterland.jpg' %>);">
-         </li>
-    </ul>
-</div>
+    <p><%= markdown(@post.body) %></p>
 <h3>Testjen</h3>
 <p>Mijn tweede belangrijke waarneming is dat een Colombiaan nooit gehaast is. Als je iemand tegenkomt zal die gerust op zijn dooie gemak een babbeltje met je slaan, ook al is hij reeds een half uur te laat voor zijn afspraak! Het is trouwens helemaal geen probleem om te laat te zijn. Rond eerst alles af waarmee je bezig bent en kom dan ´fully prepared´ naar de meeting. In Belgie zouden we ons ontbijt en douche skippen om op tijd te zijn. Hier verwacht men dat je op je opperbest arriveert en pas weggaat wanneer alles afgesloten is. Daarbovenop heb je altijd tijd voor iemand, altijd. Het is enorm onbeleefd om je je snel uit de voeten te maken omdat je nog het een en ander moet doen. Een enorme aanpassing, maar een mentaliteit waar we (ik althans) nog wat van kunnen leren - leef in het heden.
 </p><p> 

@@ -1,0 +1,11 @@
+<div class="banner">
+    <a href="#" class="unslider-arrow prev icon-chevron-with-circle-left"></a>
+    <a href="#" class="unslider-arrow next icon-chevron-with-circle-right"></a>
+    <ul>
+        <% imgs.each do |image| %>
+            <li style="background-image: url(<%= asset_path image %>);">
+        <% end %>
+       </li>
+    </ul>
+</div>
+

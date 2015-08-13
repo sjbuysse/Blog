@@ -51,6 +51,17 @@ $geyser: #d6dce0;
         border: 1px solid $geyser;
 }
 
+.article .top-buttons{
+    text-align: center;
+    .button, .button_to{
+        margin-top: 2rem;
+        display:inline-block;
+    }
+}
+
+/*********************
+* THUMBNAIL BUTTON
+*********************/
 label.thumbnail {
     input[type="file"]{
         display: none;

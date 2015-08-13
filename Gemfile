@@ -29,6 +29,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise', '~> 3.5.1'
 # paperclip for uploading pictures
 gem "paperclip", "~> 4.3"
+# for rendering markdown
+gem "redcarpet", "~> 3.3.2"
+
 
 group :development, :test do 
     gem 'rspec-rails', '~> 2.99.0'
