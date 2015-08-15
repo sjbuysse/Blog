@@ -13,6 +13,11 @@ class PostsController < ApplicationController
     def create
         @post = Post.new(post_params)
         if @post.save
+            if params[:images]
+                params[:images].each do |image|
+                    @post.pictures.create(image: image)
+                end
+            end
             flash[:success] = "Successfully created post"
             redirect_to(post_path(@post))
         else
@@ -31,6 +36,12 @@ class PostsController < ApplicationController
 
     def update
         if @post.update(post_params)
+            if params[:images]
+                params[:images].each do |image|
+                    @post.pictures.create(image: image)
+                end
+            end
+
             flash[:success] = "Successfully updated post"
             redirect_to post_path(@post)
         else

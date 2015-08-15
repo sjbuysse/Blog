@@ -5,7 +5,8 @@ class Post < ActiveRecord::Base
         end
     end
 
-    has_one :gallery
+    has_many :pictures, dependent: :destroy
+
     has_attached_file :thumb, styles: {thumb: "453x300>" }
     validates_attachment_content_type :thumb, :content_type => /\Aimage\/.*\Z/
 
