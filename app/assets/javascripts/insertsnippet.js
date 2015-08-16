@@ -1,20 +1,22 @@
 $(document).ready(function(){
     $(".insert-snippet").on("click", function(e) {
         e.preventDefault();
-        $("textarea").val($("textarea").val() + createSnippet());
+        var urls = [];
+        $(".gallery-thumbs").children("img").each(function(index){
+            urls[index] = $(this).prop("src");
+        });
+        $("textarea").val($("textarea").val() + createSnippet(urls));
     });
 });
 
-function createSnippet(){ 
+function createSnippet(urls){ 
     snippet = "<div class='banner'>" +
     "<a href='#' class='unslider-arrow prev icon-chevron-with-circle-left'></a>" +
     "<a href='#' class='unslider-arrow next icon-chevron-with-circle-right'></a>" +
-    "<ul>" + 
-    //pictures is een variabele die je meegeeft aan de liquid render (product.pictures)
-    "{% for picture in pictures %}" +
-    "<li style=\"background-image:'{{picture.url(:medium)}}';\"></li> " +
-    "{% endfor %}" +
-    "</ul></div>"; 
+    "<ul>"; 
+    for( var url in urls ){
+    snippet += "<li style=\"background-image:url(" + urls[url] + ");\"></li> ";
+    }
+    snippet += "</ul></div>"; 
     return snippet;
 }
-

@@ -11,4 +11,6 @@ class Post < ActiveRecord::Base
     validates_attachment_content_type :thumb, :content_type => /\Aimage\/.*\Z/
 
     scope :descending, -> {order('created_at DESC')}
+
+    liquid_methods :pictures, :title
 end

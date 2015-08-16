@@ -6,5 +6,7 @@ class Picture < ActiveRecord::Base
         :url  => "/images/:id/:filename",
         styles: { medium: "300x300>", thumb: "100x100>"  } 
     
-      do_not_validate_attachment_file_type :image
+    do_not_validate_attachment_file_type :image
+
+    liquid_methods :created_at, :image
 end
