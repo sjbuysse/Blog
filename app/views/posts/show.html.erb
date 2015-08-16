@@ -14,6 +14,7 @@
         <%= button_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?"  }, class: "button tomato-hover-button" %>
         </div>
     <% end %>
+    <%= markdown(@post.body) %>
     <h1><%= @post.title %> </h1>
     <div class="article-info">
         <h5 class="date-author">Submitted <%= time_ago_in_words(@post.created_at)%> ago by <%= @post.author %></h5>

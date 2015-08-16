@@ -1,4 +1,17 @@
 <%= form_for @post, html: {multipart: true} do |f| %>
+    <div class="gallery-thumbs">
+    <%=f.label "Pictures"%><br />
+    <%=file_field_tag "images[]", type: :file, multiple: true %>
+    <%=f.submit "Upload pictures"%>
+    <% @post.pictures.each do |picture| %>
+    <%= image_tag picture.image.url(:thumb) %>
+    <%= link_to "Delete", post_picture_path(@post, picture), method: :delete %>
+    <% end %>
+    <a href="#" class="insert-snippet">Insert code snippet</a>
+    </div>
+<%end%>
+ 
+<%= form_for @post  do |f| %>
     <% if @post.errors.any? %>
         <div class="errors">
             <h2><%= pluralize(@post.errors.count, "error")%> prevented this post from being saved:</h2>
@@ -10,16 +23,6 @@
         </div>
     <% end%>
 
-    <%= render "flash" %>
-    <div class="gallery-thumbs clearfix">
-    <%=f.label "Pictures"%><br />
-    <%=file_field_tag "images[]", type: :file, multiple: true %>
-    <% @post.pictures.each do |picture| %>
-    <%= image_tag picture.image.url(:thumb) %>
-    <%= link_to "Delete", post_picture_path(@post, picture), method: :delete %>
-    <% end %>
-    <a href="#" class="insert-snippet">Insert code snippet</a>
-    </div>
     <%=f.label "Title"%><br />
     <%=f.text_field :title%><br />
     <%=f.label "Author"%><br />
