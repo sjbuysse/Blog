@@ -2,6 +2,9 @@ class PostsController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show] 
     before_action :find_post, only: [:show, :edit, :update, :thumbnail, :destroy]
 
+    layout 'application', only: [:index]
+    layout 'story', only: [:new, :edit, :show]
+
     def index
         @posts = Post.descending
     end
@@ -11,22 +14,19 @@ class PostsController < ApplicationController
     end
     
     def create
-        if params[:images]
-            @post = Post.create()
-            params[:images].each do |image|
-                @post.pictures.create(image: image)
+        @post = Post.new(post_params)
+        if @post.save
+            if params[:images]
+                params[:images].each do |image|
+                    @post.pictures.create(image: image)
+                end
             end
-            render action: :new
+            flash[:success] = "Successfully created post"
+            redirect_to(post_path(@post))
         else
-            @post = Post.new(post_params)
-            if @post.save
-                flash[:success] = "Successfully created post"
-                redirect_to(post_path(@post))
-            else
-                flash[:error] = "Could not save post"
-                render action: :new
-                flash.discard(:error)
-            end
+            flash[:error] = "Could not save post"
+            render action: :new
+            flash.discard(:error)
         end
     end
 
@@ -38,12 +38,12 @@ class PostsController < ApplicationController
     end
 
     def update
-        if params[:images]
-            params[:images].each do |image|
-                @post.pictures.create(image: image)
+        if @post.update(post_params)
+            if params[:images]
+                params[:images].each do |image|
+                    @post.pictures.create(image: image)
+                end
             end
-            render action: :edit
-        elsif @post.update(post_params)
             flash[:success] = "Successfully updated post"
             redirect_to post_path(@post)
         else

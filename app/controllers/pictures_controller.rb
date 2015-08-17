@@ -5,10 +5,9 @@ class PicturesController < ApplicationController
     end
     
     def destroy
-        @post = Post.find(params[:post_id])
-        @picture = @post.pictures.find(params[:id])  
+        @picture = Picture.find(params[:id])  
         @picture.destroy
-        redirect_to :back
+        redirect_to edit_post_path(params[:post_id])
     end
 
     private

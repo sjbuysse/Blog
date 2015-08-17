@@ -26,6 +26,11 @@ $darker-title: #464646;
     max-width: 900px;
     margin: 0 auto;
 }
+@mixin title{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 5rem;
+}
 
 html, body{
     font-family: 'Raleway', sans-serif;
@@ -44,7 +49,7 @@ a {
     text-decoration: none;
     color: inherit;
 }
-input[type="text"], input[type="email"], input[type="password"], textarea {
+input[type="text"], input[type="email"], input[type="password"], textarea, .picture-upload {
     margin-top: 10px;
     width: 90%;
     border: 1px solid $shark;
@@ -65,6 +70,15 @@ textarea {
     z-index: 1;
     width: 100%;
     padding: 0;
+    .control-buttons{
+        position: absolute;
+        top: 10px;
+        right: 2rem;
+        > a {
+            padding: 0.3rem 0.5rem;
+            margin: 0 0.3rem;
+        }
+    } 
     h1{
         display: inline-block;
         font-size: $navbar-title-size;
@@ -118,9 +132,7 @@ textarea {
     padding-top : 1px;
     @include center-page;
     h1 {
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 5rem;
+        @include title;
     }
     p{
         line-height: 1.75;
@@ -231,7 +243,7 @@ $tile-margin: (100% - (4 * $tile-width))/3;
 }
 
 .hero-image {
-    background-image: image-url(footsmall);
+    background-image: image-url(footsteps);
 	height: 100vh;	
     background-repeat: no-repeat;
 	background-size: cover;
@@ -277,8 +289,34 @@ $tile-margin: (100% - (4 * $tile-width))/3;
     margin-top: $navbar-height;
 }
 
+/*********************
+ * FORM NEW POST 
+ ********************/
+.gallery-thumbs {
+    /*clear: left;*/
+    img { width: 100px; }
+    .thumb {
+        display: inline-block;
+    }
+}
 
+.new-post-wrapper{
+    h1{
+        @include title;
+    }
+    @include center-page;
+    label{
+        display: inline-block;
+        margin-top: 5px;
+    }
+}
 
+.picture-upload{
+    padding: 1rem;
+}
+.picture-control{
+    margin-top: 1rem;
+}
 
 /*********************
  * CLEARFIX 

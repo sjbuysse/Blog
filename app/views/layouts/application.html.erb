@@ -9,6 +9,24 @@
     <%= csrf_meta_tags %>
 </head>
 <body>
+    <div class="navbar"> 
+        <a href="#top" class="scroll"><h1>Playbirdies</h1></a>
+        <ul>
+            <li><a href="mailto:buysse.simon@gmail.com">Contact us</a></li>
+            <li><a href="https://instagram.com/simon.hashtag/">Instagram</a></li>
+            <li><%= link_to "Playbirdies 101", about_path %></li>
+            <li><a href="index.html#anchor-grid" class="scroll">Blog</a></li>
+        </ul>
+        <div class="control-buttons">
+        <% if user_signed_in? %>
+            <%= link_to "New post", new_post_path, class: "button blue-hover-button" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button tomato-hover-button"%>
+        <% else %>
+            <%= link_to "Log in", user_session_path, class: "button blue-hover-button"%>
+        <% end %>
+        </div>
+    </div>
+
     <%= yield %>
 </div>
 </body>
