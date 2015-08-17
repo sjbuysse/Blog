@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $('a[href*="#"][class="scroll"]').on('click', function(event) {
         var target = $(this).attr('href').replace("index.html", "");
+        var target = $(this).attr('href').replace("/", "");
         var $target = $(target);
         if( $target.length ) {
             event.preventDefault();

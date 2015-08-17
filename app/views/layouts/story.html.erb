@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stories about exploration, working abroad and cheese.</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400italic' rel='stylesheet' type='text/css'>
+    <%= csrf_meta_tags %>
+</head>
+<body>
+    <div class="article-nav"> 
+        <ul>
+            <li class="icon-chevron-small-left">Title of the previous...</li>
+            <li class="icon-grid"><%= link_to "Back to stories", root_path(anchor: "anchor-grid") %></li>
+            <li class="icon-chevron-small-right">Title of the next story...</li>
+        </ul>
+    </div>
+    <div style="overflow: hidden; height: 0px; width: 0px;">&nbsp;</div>
+    <%= render "flash" %>
+
+    <%= yield %>
+</div>
+</body>
+</html>
