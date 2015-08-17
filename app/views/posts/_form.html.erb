@@ -10,33 +10,39 @@
         </div>
 
     <% end%>
-
-    <%=f.label "Pictures"%><br />
-    <div class="picture-upload">
-        <%=file_field_tag "images[]", type: :file, multiple: true %>
-        <div class="gallery-thumbs">
-        <% @post.pictures.each do |picture| %>
-        <div class="thumb">
-            <%= image_tag picture.image.url %><br />
-            <%= link_to "Delete", post_picture_path(@post, picture), method: :delete %>
-        </div>
-        <% end %>
-        </div>
-        <div class="picture-control">
-        <a href="#" class="insert-snippet button blue-hover-button">Insert code snippet</a>
-        </div>
-    </div>
- 
-
     <%=f.label "Title"%><br />
     <%=f.text_field :title%><br />
+    <br />
     <%=f.label "Author"%><br />
     <%=f.text_field :author%><br />
-
     <br />
     <%=f.label "Body"%><br />
     <%=f.text_area :body%><br />
     <br />
-    <%=f.submit "Save post", class: "button blue-hover-button"%>
+   <%=f.label "Synopsis"%><br />
+    <%=f.text_area :synopsis%><br />
+    <br />
+    <%=f.label "Pictures"%><br />
+    <%=file_field_tag "images[]", type: :file, multiple: true %>
+    <a href="#" class="insert-snippet button blue-hover-button">Insert code snippet</a>
+    <div class="gallery-thumbs">
+    <% @post.pictures.each do |picture| %>
+    <div class="thumb">
+        <%= image_tag picture.image.url %><br />
+        <%= link_to "Delete", post_picture_path(@post, picture), method: :delete %>
+    </div>
+    <% end %>
+    </div>
+    <br />
+    <%=f.label "Thumbnail"%><br />
+    <%=f.file_field :thumb%><br />
+    <div class="thumb">
+        <%= image_tag @post.thumb.url(:thumb) %><br />
+    </div>
+    <br />
+    <br />
+    <div>
+        <%=f.submit "Save post!", class: "button blue-hover-button"%>
+    </div>
 <%end%>
 

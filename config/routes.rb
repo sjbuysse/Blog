@@ -3,10 +3,7 @@ Rails.application.routes.draw do
     resources :posts do
         resources :comments 
         resources :pictures
-        member do
-            patch :thumbnail
-        end
-    end
+   end
     root 'posts#index'
 
     get '/about', to: 'pages#about'

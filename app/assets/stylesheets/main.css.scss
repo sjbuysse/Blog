@@ -44,17 +44,23 @@ h1, h2, h3, h4 {
   font-weight: 500;
   color: $darker-title;
 }
+h1{
+    word-spacing: 0.5rem;
+}
 
 a {
     text-decoration: none;
     color: inherit;
 }
-input[type="text"], input[type="email"], input[type="password"], textarea, .picture-upload {
+input[type="text"], input[type="email"], input[type="password"], textarea, {
     margin-top: 10px;
     width: 90%;
     border: 1px solid $shark;
     border-radius: 0.35rem;
     padding: 0.5rem 1rem;
+}
+input[type="file"]{
+    margin: 10px 0;
 }
 input[type="text"]{
     height: 2rem;
@@ -290,33 +296,35 @@ $tile-margin: (100% - (4 * $tile-width))/3;
 }
 
 /*********************
- * FORM NEW POST 
+ * FORM NEW/EDIT POST 
  ********************/
-.gallery-thumbs {
-    /*clear: left;*/
-    img { width: 100px; }
-    .thumb {
-        display: inline-block;
+.thumb {
+    display: inline-block;
+    img{
+        width: 100px;
     }
 }
 
+.update-post-wrapper,
 .new-post-wrapper{
+    position: relative;
+    padding-bottom: 4rem;
     h1{
         @include title;
     }
     @include center-page;
-    label{
-        display: inline-block;
-        margin-top: 5px;
+    label {
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+    }
+    input[type="submit"]{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
     }
 }
 
-.picture-upload{
-    padding: 1rem;
-}
-.picture-control{
-    margin-top: 1rem;
-}
 
 /*********************
  * CLEARFIX 

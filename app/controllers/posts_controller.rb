@@ -52,12 +52,7 @@ class PostsController < ApplicationController
         end
     end
 
-    def thumbnail
-        @post.update(post_params)
-        redirect_to :back
-    end
-
-    def destroy
+   def destroy
         @post.destroy
         
         flash[:success] = "Successfully deleted post"
@@ -70,6 +65,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-        params.require(:post).permit(:title, :body, :thumb, :author)
+        params.require(:post).permit(:title, :body, :thumb, :author, :synopsis)
     end
 end

@@ -9,13 +9,6 @@
         <%= link_to "Edit", edit_post_path(post), class: "button blue-hover-button" %>
         <%= button_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?"  }, class: "button tomato-hover-button" %>
         </div>
-        <%= form_for post, html: { multipart: true  }, url: thumbnail_post_path(post) do |f| %>
-        <label class="thumbnail">
-            <%= f.file_field :thumb, as: :file, id: "#{dom_id(post)}_thumb_filefield" %>
-            <p class="button blue-hover-button">Chose thumb</p>
-        </label>
-            <%= f.submit "Upload thumb", class: "button blue-hover-button", method: :patch%>
-        <% end %>
     <% end %>
 </div>
 
