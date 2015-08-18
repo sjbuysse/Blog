@@ -5,7 +5,7 @@ $(document).ready(function(){
         //$(".gallery-thumbs > * > img").each(function(index){
             //urls[index] = $(this).prop("src");
         //});
-        $("textarea").val($("textarea").val() + createLiquidSnippet());
+        $("textarea[name='post[body]']").val($("textarea[name='post[body]']").val() + createLiquidSnippet());
     });
 });
 function createLiquidSnippet(){ 
