@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     before_action :find_post, only: [:show, :edit, :update, :thumbnail, :destroy]
 
     layout 'application', only: [:index]
-    layout 'story', only: [:new, :edit, :show]
+    layout 'story', only: [:new, :edit, :show, :about]
 
     def index
         @posts = Post.descending
@@ -52,11 +52,17 @@ class PostsController < ApplicationController
         end
     end
 
-   def destroy
+    def destroy
         @post.destroy
         
         flash[:success] = "Successfully deleted post"
         redirect_to root_path
+    end
+
+    def about
+        @post = Post.about.first
+        @comment = @post.comments.new
+        render "show"
     end
 
     private
