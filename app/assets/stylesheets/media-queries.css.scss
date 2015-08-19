@@ -1,0 +1,166 @@
+$navbar-height: 5rem;
+$navbar-title-size: 3rem;
+$navbar-bottom-padding: ($navbar-height - $navbar-title-size)/2;
+$back-color: #EDEEEE;
+$text-color: #8A8A8A;
+$shark: #2a2f35;
+$darker-title: #464646;
+
+@media screen and ( min-width: 480px ) {
+    .hero-image{
+        height: 100vh;
+        background-position: 50%;
+        .motivational{
+            display: block;
+            position: absolute;
+            top: 60%;
+            left: 10%;
+            h1, h2, h3 {
+                color: white;
+                font-family: 'atwriter';
+                text-shadow: 1px 1px 7px rgb(0,0,0); 
+                margin: 0.5rem;
+            }
+            h1 {
+                font-weight: 400;
+                font-size: 2.5rem;
+                margin-bottom: 0;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            h3 {
+                margin-top: 0;
+                font-size: 1.1rem;
+            }
+        }
+
+        .short-motivational{
+            display: none;
+        }
+    }
+
+    .anchor {
+        height: $navbar-height;
+        margin-top: -$navbar-height;
+    }
+
+    /**********************
+    * TILE LAYOUT
+    **********************/
+    .grid{
+        margin: 4rem auto;
+    }
+
+    $tile-width: 23%;
+    $tile-margin: (100% - (4 * $tile-width))/3;
+
+    #grid[data-columns]::before {
+        content: '4 .column.size-1of4';
+    }
+
+    .size-1of4 { 
+    width: $tile-width;  
+    }
+
+    .column { 
+        float: left;
+        & + & {
+            margin-left: $tile-margin;
+        }
+    }
+    /**********************
+    * NAVABAR
+    **********************/
+    #drawer, #drawer-toggle-label, #drawer-toggle, header{
+        display: none;
+    }
+    
+    .article-nav{
+        display: block;
+        ul {
+            margin: 2rem 3rem;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+            margin: 0;
+            float:left;
+            &:first-child{
+                width: 30%;
+            }
+            &:nth-child(2){
+                width: 40%;
+                text-align: center;
+            }
+            &:nth-child(3){
+                width: 30%;
+                text-align: right;
+            }
+     
+        }
+    }
+    .navbar {
+        background: $back-color;
+        height: $navbar-height;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        padding: 0;
+        display: block;
+        .control-buttons{
+            position: absolute;
+            top: 10px;
+            right: 2rem;
+            > a {
+                padding: 0.3rem 0.5rem;
+                margin: 0 0.3rem;
+            }
+        } 
+        h1{
+            display: inline-block;
+            font-size: $navbar-title-size;
+            margin: 0;
+            padding: $navbar-bottom-padding;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            bottom: $navbar-bottom-padding;
+            right: 0;
+        }
+        li {
+            text-transform: uppercase;
+            font-weight: 600;
+            text-align: center;
+            float: right;
+            padding-right: 2rem;
+        }
+    }
+}
+
+@media screen and ( max-width: 479px ) {
+    /**********************
+    * TILE LAYOUT
+    **********************/
+
+    $tile-width: 47%;
+    $tile-margin: (100% - (2 * $tile-width));
+
+    #grid[data-columns]::before {
+        content: '2 .column.size-1of2';
+    }
+
+    .size-1of2 { 
+        width: $tile-width;  
+    }
+    .column { 
+        float: left;
+        & + & {
+            margin-left: $tile-margin;
+        }
+    }
+}
