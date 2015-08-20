@@ -97,6 +97,9 @@ textarea {
     h1 {
         @include title;
     }
+    h3{
+        text-align: center;
+    }
     p{
         line-height: 1.75;
     }
@@ -163,10 +166,6 @@ textarea {
     margin-bottom: 2rem;
     box-shadow: 5px 7px 20px -8px rgba(0,0,0, .8);
     overflow: hidden;
-    img {
-        width: 100%;
-        display: block;
-    }
     h2{
         text-transform: uppercase;
         margin: 0 1rem 1rem;
@@ -181,6 +180,15 @@ textarea {
 
     p {
         margin: 1rem;
+    }
+}
+div.intrisic-ratio {
+    padding-bottom: 20.25%;
+    position: relative;
+    height: 0;
+    > div {
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
     }
 }
 .navbar, .article-nav {
