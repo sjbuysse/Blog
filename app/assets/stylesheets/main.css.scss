@@ -98,7 +98,14 @@ textarea {
         @include title;
     }
     h3{
+        font-size: 2rem;
         text-align: center;
+        display: block;
+        width: 80%;
+        padding: 1rem 0;
+        margin: 1.5rem auto;
+        border-top: 1px solid $text-color;
+        border-bottom: 1px solid $text-color;
     }
     p{
         line-height: 1.75;
