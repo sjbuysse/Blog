@@ -1,8 +1,7 @@
 <div id=<%=dom_id(post)%> class="tile"> 
     <%= link_to post_path(post) do %>
     <div class="intrisic-ratio">
-        <div>
-        <%= image_tag post.thumb.url(:thumb) %>
+        <div style="background-image: url(<%=post.thumb.url(:thumb)%>)">
         </div>
     </div>
     <h5 class="date-author"><%= post.created_at.strftime("%B %d, %Y")%></h5>
