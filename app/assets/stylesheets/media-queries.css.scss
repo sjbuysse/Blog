@@ -6,7 +6,7 @@ $text-color: #8A8A8A;
 $shark: #2a2f35;
 $darker-title: #464646;
 
-@media screen and ( min-width: 480px ) {
+@media screen and ( min-width: 900px ) {
     .hero-image{
         height: 100vh;
         background-position: 50%;
@@ -72,10 +72,7 @@ $darker-title: #464646;
     /**********************
     * NAVABAR
     **********************/
-    #drawer, #drawer-toggle-label, #drawer-toggle, header{
-        display: none;
-    }
-    
+   
     .article-nav{
         display: block;
         ul {
@@ -142,7 +139,29 @@ $darker-title: #464646;
     }
 }
 
-@media screen and ( max-width: 479px ) {
+@media screen and ( max-width: 900px ) {
+    /**********************
+    * TILE LAYOUT
+    **********************/
+
+    $tile-width: 32%;
+    $tile-margin: (100% - (3 * $tile-width))/2;
+
+    #grid[data-columns]::before {
+        content: '3 .column.size-1of3';
+    }
+
+    .size-1of3 { 
+        width: $tile-width;  
+    }
+    .column { 
+        float: left;
+        & + & {
+            margin-left: $tile-margin;
+        }
+    }
+}
+@media screen and ( max-width: 750px ) {
     /**********************
     * TILE LAYOUT
     **********************/

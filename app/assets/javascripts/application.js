@@ -17,4 +17,5 @@
 //= require scroll
 //= require unslider
 //= require unslider-options
+//= require trunk 
 //= require_directory .

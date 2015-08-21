@@ -8,36 +8,32 @@
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400italic' rel='stylesheet' type='text/css'>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="initial-scale=1.0"></meta>
+
 </head>
 <body>
-    <div class="navbar"> 
-        <a href="#top" class="scroll"><h1>Playbirdies</h1></a>
-        <ul> 
+
+<div class="container">
+
+	<header class="slide">     <!--	Add "slideRight" class to items that move right when viewing Nav Drawer  -->
+		<ul id="navToggle" class="burger slide">    <!--	Add "slideRight" class to items that move right when viewing Nav Drawer  -->
+			<li></li><li></li><li></li>
+		</ul>
+		<h1>Trunk.js</h1>
+	</header>
+	<nav class="slide">
+		<ul>
             <li><a href="mailto:buysse.simon@gmail.com">Contact us</a></li>
             <li><a href="https://instagram.com/simon.hashtag/">Instagram</a></li>
             <li><%= link_to "Playbirdies 101", about_path %></li>
             <li><%= link_to "Stories", root_path(anchor: "anchor-grid"), class: "scroll" %></li>
         </ul>
-        <div class="control-buttons">
-        <% if user_signed_in? %>
-            <%= link_to "New post", new_post_path, class: "button blue-hover-button" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button tomato-hover-button"%>
-        <% end %>
+	</nav>
+	
+	<div class="content slide">     <!--	Add "slideRight" class to items that move right when viewing Nav Drawer  -->
+       <div class="page-content">
+        <%= yield %>
         </div>
     </div>
-    <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
-    <label for="drawer-toggle" id="drawer-toggle-label"></label>
-    <header></header>
-    <div id="drawer"> 
-        <ul>
-            <li><label for="drawer-toggle"><a href="/#anchor-grid">Stories</a></label></li>
-            <li><%= link_to "Playbirdies 101", about_path %></li>
-            <li><a href="https://instagram.com/simon.hashtag/">Instagram</a></li>
-            <li><a href="mailto:buysse.simon@gmail.com">Contact us</a></li>
-        </ul>
-    </div>
-    <div class="page-content">
-    <%= yield %>
-    </div>
+</div>
 </body>
 </html>

@@ -49,7 +49,7 @@ $darker-title: #464646;
     zoom: 1.0; 
     width: extend-to-zoom; 
 }
-html, body{
+html, body, .container, .page-content{
     font-family: 'Raleway', sans-serif;
     background-color: $back-color;
     color: $shark;
