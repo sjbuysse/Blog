@@ -1,10 +1,9 @@
+$back-color: #E7E7E7;
 $navbar-height: 5rem;
-$navbar-title-size: 3rem;
-$navbar-bottom-padding: ($navbar-height - $navbar-title-size)/2;
-$back-color: #EDEEEE;
 $text-color: #8A8A8A;
 $shark: #2a2f35;
 $darker-title: #464646;
+
 @mixin white-text-black-back{
     color: white;
     background: rgba(0,0,20, 0.5);
@@ -30,10 +29,12 @@ $darker-title: #464646;
     text-transform: uppercase;
     text-align: center;
     font-size: 5rem;
+    margin: 3.4rem 0;
 }
 @mixin info-text{
     display: inline-block;
         font-size: 1rem;
+        margin: 1.7rem 0 2.7rem;
         font-weight: 500;
         font-style:italic;
         font-family: 'PT Sans', sans-serif;
@@ -45,10 +46,6 @@ $darker-title: #464646;
         }
 }
 
-@viewport{ 
-    zoom: 1.0; 
-    width: extend-to-zoom; 
-}
 html, body, .container, .page-content{
     font-family: 'Raleway', sans-serif;
     background-color: $back-color;
@@ -109,6 +106,7 @@ textarea {
     }
     p{
         line-height: 1.75;
+        margin: 1rem 0;
     }
     .article-info{
         text-align: center;
@@ -125,14 +123,14 @@ textarea {
 *********************/
 .comments{
     @include center-page;
-    padding-bottom: 3rem;
+    padding: 1rem 0 3rem;
     h1 {
         font-size: 2rem;
         border-bottom: 1px solid $shark;
         border-top: 1px solid $shark;
         padding: 2rem 0;
+        margin: 1.5rem 0;
         text-align: center;
-        /*text-transform: uppercase;*/
     }
     .comment-wrapper {
         width: 70%;
@@ -140,7 +138,8 @@ textarea {
     }
 
     h3 {
-        margin-top: 2rem;
+        font-size: 2rem;
+        margin: 2rem 0 1rem;
     }
    p.comment-name {
         text-transform: uppercase;
@@ -150,15 +149,20 @@ textarea {
     }
     p.comment-body{
         font-size: 1.1rem;
-        margin: 0.3rem 0 0 0;
+        margin-top: 0.1rem;
     }
     p.comment-date {
         font-size: 0.8rem;
+        margin: 0.8rem 0;
     }
     input[type="text"], textarea {
                 width: 50%;
     }
 }
+
+/**************************
+* GRID AND TILES
+**************************/
 
 .grid{
     min-height: 100vh;
@@ -166,6 +170,22 @@ textarea {
     margin: 4rem 1rem;
 }
 
+$tile-width: 47%;
+$tile-margin: (100% - (2 * $tile-width));
+
+#grid[data-columns]::before {
+    content: '2 .column.size-1of2';
+}
+
+.size-1of2 { 
+    width: $tile-width;  
+}
+.column { 
+    float: left;
+    & + & {
+        margin-left: $tile-margin;
+    }
+}
 
 .tile {
     background-color: white;
@@ -189,6 +209,7 @@ textarea {
         margin: 1rem;
     }
 }
+
 div.intrisic-ratio {
     padding-bottom: 70%;
     position: relative;
@@ -202,46 +223,41 @@ div.intrisic-ratio {
         background-position: bottom;
     }
 }
-.navbar, .article-nav {
-   display: none;
+
+.control-buttons{
+    @include white-text-black-back;
+    position: absolute;
+    padding: 1rem;
+    color: white;
+    right: 0;
+    .button {
+        border: 2px solid white;
+    }
 }
+
 
 .hero-image {
     background-image: image-url(footsteps);
     position: relative;
     height: 100vh;
-    background-position: bottom ; 
+    background-position: 20%; 
     background-repeat: no-repeat;
 	background-size: cover;
 	margin: 0;
-    .short-motivational{
+    .motivational{
         position: absolute;
         top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 80%;
         text-align: center;
-        h1, h2, h3 {
-            color: white;
-            font-family: 'atwriter';
+        h1, h2 {
+            font-family: Tangerine, cursive;
+            font-weight: 500;
+            font-size: 3rem;
             text-shadow: 1px 1px 7px rgb(0,0,0); 
             margin: 0.5rem;
         }
-        h1 {
-            font-weight: 400;
-            font-size: 2;
-            margin-bottom: 0;
-        }
-        h2 {
-            font-size: 1.1rem;
-        }
-        h3 {
-            margin-top: 0;
-            font-size: 0.9rem;
-        }
-    }
-    .motivational{
-        display: none;
     }
 }
 
@@ -250,14 +266,6 @@ div.intrisic-ratio {
     height: 60px;
     margin-top: -60px;
     visibility: hidden;
-}
-
-/*********************
- * ABOUT 
- ********************/
-.about-page{
-    @include center-page;
-    margin-top: $navbar-height;
 }
 
 /*********************
@@ -288,6 +296,13 @@ div.intrisic-ratio {
         left: 50%;
         transform: translate(-50%, 0);
     }
+}
+/*********************
+ * LOGIN SIGN UP SCREEN
+ ********************/
+.devise-wrapper {
+    max-width: 900px;
+    margin: $navbar-height auto;
 }
 
 

@@ -17,6 +17,6 @@
 <div class="comments clearfix" id="comments">
     <h1><%= pluralize(@post.comments.count, "comment") %></h1>
     <%= render @post.comments.persisted %>
-    <h3>Add a comment:</h3>
+    <h3>Add a comment</h3>
     <%= render "comments/form" %>
 </div>

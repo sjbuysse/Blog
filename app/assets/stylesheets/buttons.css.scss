@@ -1,4 +1,5 @@
 $shark: #2a2f35;
+$back-color: #E7E7E7;
 $cascade: #95A5A6;
 $pelorous: #33acb7;
 $geyser: #d6dce0;
@@ -39,11 +40,13 @@ $geyser: #d6dce0;
 .blue-hover-button:hover{
             color: $pelorous;
             border: 1px solid $pelorous;
+            cursor: pointer;
 }
 /*Turns a button tomato-ish when hovered over*/
 .tomato-hover-button:hover{
             color: tomato;
             border: 1px solid tomato;
+            cursor: pointer;
 }
 /*a light grey button, with somewhat smaller font*/
 .light-grey-smaller-button{
@@ -59,15 +62,9 @@ $geyser: #d6dce0;
     }
 }
 
-/*********************
-* THUMBNAIL BUTTON
-*********************/
-label.thumbnail {
-    input[type="file"]{
-        display: none;
-    }
-}
 .tile .button {
     float: left;
-    margin: 0.2rem;
+    margin: 0.5rem;
 }
+
+

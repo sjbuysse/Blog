@@ -16,7 +16,8 @@ function createLiquidSnippet(){
     "{% for picture in pictures %}" +
         "<li style=\"background-image:url({{picture.image_url}});\"></li>" + 
     "{% endfor %}" +
-    "</ul></div>"; 
+    "</ul></div>" + 
+    "<div style=\"overflow: hidden; height: 0px; width: 0px;\">&nbsp;</div>";
     return snippet;
 }
 
