@@ -22,28 +22,27 @@ $darker-title: #464646;
     }
 }
 @mixin center-page{
-    max-width: 900px;
-    margin: 0 auto;
+    margin: 0 10px;
 }
 @mixin title{
     text-transform: uppercase;
     text-align: center;
-    font-size: 5rem;
-    margin: 3.4rem 0;
+    font-size: 3rem;
+    margin: 5rem 0 1.5rem;
 }
 @mixin info-text{
     display: inline-block;
-        font-size: 1rem;
-        margin: 1.7rem 0 2.7rem;
-        font-weight: 500;
-        font-style:italic;
-        font-family: 'PT Sans', sans-serif;
-        &.comments-icon{
-            @include icon(1.7rem, 2px);
-          }
-        &.likes-icon{
-            @include icon(2.7rem, 0);
-        }
+    font-size: 1rem;
+    margin: 1.7rem 0 2.7rem;
+    font-weight: 500;
+    font-style:italic;
+    font-family: 'PT Sans', sans-serif;
+    &.comments-icon{
+        @include icon(1.7rem, 2px);
+      }
+    &.likes-icon{
+        @include icon(2.7rem, 0);
+    }
 }
 
 html, body, .container, .page-content{
@@ -112,10 +111,20 @@ textarea {
         text-align: center;
         margin: 1rem auto;
         h5{
-        @include info-text;    
+            display: inline-block;
+            font-size: 1rem;
+            margin: 1.7rem 0 0.7rem;
+            font-weight: 500;
+            font-style:italic;
+            font-family: 'PT Sans', sans-serif;
+            &.comments-icon{
+                @include icon(1.7rem, 2px);
+            }
+            &.likes-icon{
+                @include icon(2.7rem, 0);
+            }
         }
     }
-    
 }
 
 /**********************
@@ -246,17 +255,21 @@ div.intrisic-ratio {
 	margin: 0;
     .motivational{
         position: absolute;
-        top: 60%;
+        top: 75%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 80%;
         text-align: center;
         h1, h2 {
+            color:white;
             font-family: Tangerine, cursive;
             font-weight: 500;
             font-size: 3rem;
             text-shadow: 1px 1px 7px rgb(0,0,0); 
             margin: 0.5rem;
+        }
+        h2{
+            font-size:2.5rem;
         }
     }
 }

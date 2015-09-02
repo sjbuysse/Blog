@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
-    before_action :authenticate_user!, except: [:index, :show] 
+    before_action :authenticate_user!, except: [:index, :show, :about] 
     before_action :find_post, only: [:show, :edit, :update, :thumbnail, :destroy]
 
-    layout 'application', only: [:index]
-    layout 'story', only: [:new, :edit, :show, :about]
+    #layout 'application', only: [:index]
+    #layout 'story', only: [:show, :about]
 
     def index
         @posts = Post.descending

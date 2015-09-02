@@ -10,19 +10,45 @@
     <meta name="viewport" content="initial-scale=1.0"></meta>
 </head>
 <body>
-    <div class="article-nav"> 
-        <ul>
+
+<div class="container">
+
+	<header class="slide">     <!--	Add "slideRight" class to items that move right when viewing Nav Drawer  -->
+		<ul id="navToggle" class="burger slide">    <!--	Add "slideRight" class to items that move right when viewing Nav Drawer  -->
+			<li></li><li></li><li></li>
+		</ul>
+		<h1>Travelcrumbs</h1>
+        <% if user_signed_in? %>
+            <div class="control-buttons">
+                <%= link_to "New post", new_post_path , class: "button blue-hover-button" %>
+                <%= link_to "Log out", destroy_user_session_path, class: "button tomato-hover-button", method: :delete %>
+            </div>
+        <% end %>
+	</header>
+	<nav class="slide">
+		<ul>
+            <li><%= link_to "Crumbs", root_path(anchor: "anchor-grid"), class: "scroll" %></li>
+            <li><%= link_to "About us", about_path %></li>
+            <li><a href="https://instagram.com/simon.hashtag/">Instagram</a></li>
+            <li><a href="mailto:buysse.simon@gmail.com">Contact us</a></li>
+        </ul>
+	</nav>
+
+    <nav class="article-nav">
+         <ul>
             <li class="icon-chevron-small-left">Title of the previous...</li>
             <li class="icon-grid"><%= link_to "Back to stories", root_path(anchor: "anchor-grid") %></li>
             <li class="icon-chevron-small-right">Title of the next story...</li>
         </ul>
-    </div>
+    </nav>
     <div style="overflow: hidden; height: 0px; width: 0px;">&nbsp;</div>
     <%= render "flash" %>
-    
-   <div class="page-content">
-    <%= yield %>
+	<div class="content slide">     <!--	Add "slideRight" class to items that move right when viewing Nav Drawer  -->
+       <div class="page-content">
+        <%= yield %>
+        </div>
     </div>
+</div>
 
 </body>
 </html>

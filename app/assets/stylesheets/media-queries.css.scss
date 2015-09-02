@@ -3,6 +3,10 @@ $back-color: #EDEEEE;
 $text-color: #8A8A8A;
 $shark: #2a2f35;
 $darker-title: #464646;
+@mixin center-page-big{
+    max-width: 900px;
+    margin: auto;
+}
 @viewport{ 
     zoom: 1.0; 
     width: extend-to-zoom; 
@@ -12,28 +16,14 @@ $darker-title: #464646;
     .hero-image{
         height: 100vh;
         background-position: 50%;
-        .motivational{
-            display: block;
-            position: absolute;
-            top: 60%;
-            left: 10%;
-            h1, h2, h3 {
-                color: white;
-                font-family: 'atwriter';
-                text-shadow: 1px 1px 7px rgb(0,0,0); 
-                margin: 0.5rem;
+        .motivational {
+            h1{
+                font-weight: 600;
+                font-size: 4rem;
             }
-            h1 {
-                font-weight: 400;
-                font-size: 2.5rem;
-                margin-bottom: 0;
-            }
-            h2 {
-                font-size: 1.5rem;
-            }
-            h3 {
-                margin-top: 0;
-                font-size: 1.1rem;
+            h2{
+                font-weight: 600;
+                font-size: 3rem;
             }
         }
     }
@@ -59,19 +49,31 @@ $darker-title: #464646;
             margin-left: $tile-margin;
         }
     }
+    
+    /**********************
+    * ARTICLE
+    **********************/
+    .article {
+        h1 {
+            font-size: 5rem;
+            margin: 6rem 0 1.5rem;
+        }
+
+        .article-info{
+            h5{
+                margin: 1.7rem 0 2.7rem;
+            }
+        }
+    }
 }
 
 @media screen and ( min-width: 920px ) {
-    /*.banner {*/
-        /*li {*/
-            /*height: 95vh;*/
-            /*width: 100vw;*/
-        /*}*/
-    /*}*/
-    /*position the next element under the banner*/
-    /*& + * {*/
-        /*margin-top: 108vh;*/
-    /*}*/
+    .new-post-wrapper, 
+    .update-post-wrapper,
+    .article, 
+    .comments{
+        @include center-page-big;
+    }
     .anchor {
         height: $navbar-height;
         margin-top: -$navbar-height;
