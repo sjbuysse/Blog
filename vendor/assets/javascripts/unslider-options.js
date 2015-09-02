@@ -8,6 +8,11 @@ $(function() {
         fluid: true              //  Support responsive design. May break non-responsive designs
     });
 
+    unslider.on('movestart', function(e) {
+        if((e.distX > e.distY && e.distX < -e.distY) || (e.distX < e.distY && e.distX > -e.distY)) {
+                    e.preventDefault();
+        }
+    });
     $('.unslider-arrow').click(function(e) {
         e.preventDefault();
         var fn = this.className.split(' ')[1];

@@ -15,6 +15,8 @@
 //= require jquery.turbolinks
 //= require turbolinks
 //= require scroll
+//= require jquery.event.move 
+//= require jquery.event.swipe 
 //= require unslider
 //= require unslider-options
 //= require trunk 

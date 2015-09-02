@@ -105,8 +105,8 @@
 			};
 			
 			//  Swipe support
-			if($.event.swipe) {
-				this.el.on('swipeleft', _.prev).on('swiperight', _.next);
+			if($.event.special.swipe) {
+				this.el.on('swipeleft', _.next).on('swiperight', _.prev);
 			}
 		};
 		
