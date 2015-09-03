@@ -1,10 +1,12 @@
 @mixin arrow-icon{
     position: absolute;
-    top: 45vh;
+    /*top: 45vh;*/
+    top: 38vw;
     z-index: 1;
     &::before {
         font-family: 'icomoon';
-        font-size: 5rem;
+        font-size: 2rem;
+        /*font-size: 5rem;*/
         color: white;
         color: rgba(256, 256, 256, 0.5);
     }
@@ -37,6 +39,7 @@
     }
     /*position the next element under the banner*/
     & + * {
+        /*margin-top: 108vh;*/
         margin-top: 108vh;
     }
 }
@@ -50,8 +53,10 @@
 
 .dots li {
   display: inline-block;
-  width: 10px;
-  height: 10px;
+  /*width: 10px;*/
+  width: 5px;
+  /*height: 10px;*/
+  height: 5px;
   margin: 0 4px;
   text-indent: -999em;
   border: 2px solid #fff;
@@ -69,11 +74,52 @@
 }
 
 .prev {
-    left: 3rem;
+    /*left: 3rem;*/
+    left: 1.5rem;
     @include arrow-icon;
 }
 .next {
-    right: 3rem;
+    /*right: 3rem;*/
+    right: 1.5rem;
     @include arrow-icon;
 }
 
+@media screen and (min-width: 520px) {
+    .dots li {
+        width: 7px;
+        height: 7px;
+    }
+    .prev {
+        left: 1.5rem;
+        &::before {
+            font-size: 3rem;
+        }
+    }
+    .next {
+        right: 1.5rem;
+        &::before {
+            font-size: 3rem;
+        }
+    }
+}
+@media screen and (min-width: 720px),
+screen and (orientation: landscape){
+    .banner ul li{
+        height: 90vh;
+    }
+    .dots{
+        bottom: 40px;
+    }
+    .prev {
+        left: 2rem;
+        &::before {
+            font-size: 3.5rem;
+        }
+    }
+    .next {
+        right: 2rem;
+        &::before {
+            font-size: 3.5rem;
+        }
+    }
+}
