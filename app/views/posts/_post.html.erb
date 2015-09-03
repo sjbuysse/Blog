@@ -6,7 +6,6 @@
     </div>
     <h5 class="date-author"><%= post.created_at.strftime("%B %d, %Y")%></h5>
     <h2><%= post.title %></h2>
-    <% end %> 
     <p><%= post.synopsis  %></p>
     <% if user_signed_in? %>
         <div class="clearfix">
@@ -14,5 +13,6 @@
         <%= button_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?"  }, class: "button tomato-hover-button" %>
         </div>
     <% end %>
+    <% end %> 
 </div>
 

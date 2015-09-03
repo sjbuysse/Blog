@@ -40,7 +40,8 @@
     /*position the next element under the banner*/
     & + * {
         /*margin-top: 108vh;*/
-        margin-top: 108vh;
+        margin-top: 75vw;
+        margin-bottom: 10vh;
     }
 }
 .dots {
@@ -104,22 +105,28 @@
 }
 @media screen and (min-width: 720px),
 screen and (orientation: landscape){
-    .banner ul li{
-        height: 90vh;
-    }
-    .dots{
-        bottom: 40px;
-    }
-    .prev {
-        left: 2rem;
-        &::before {
-            font-size: 3.5rem;
+    .banner {
+        ul li{
+            height: 90vh;
         }
-    }
-    .next {
-        right: 2rem;
-        &::before {
-            font-size: 3.5rem;
+        & + * {
+            margin-top: 90vh;
+            margin-bottom: 10vh;
+        }
+        .dots{
+            bottom: 40px;
+        }
+        .prev {
+            left: 2rem;
+            &::before {
+                font-size: 3.5rem;
+            }
+        }
+        .next {
+            right: 2rem;
+            &::before {
+                font-size: 3.5rem;
+            }
         }
     }
 }

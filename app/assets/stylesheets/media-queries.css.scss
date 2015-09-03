@@ -67,16 +67,20 @@ $darker-title: #464646;
     }
 }
 
+
+@media screen and ( min-width: 850px ) {
+    .anchor {
+        height: $navbar-height;
+        margin-top: -$navbar-height;
+    }
+}
+
 @media screen and ( min-width: 920px ) {
     .new-post-wrapper, 
     .update-post-wrapper,
     .article, 
     .comments{
         @include center-page-big;
-    }
-    .anchor {
-        height: $navbar-height;
-        margin-top: -$navbar-height;
     }
 }
 

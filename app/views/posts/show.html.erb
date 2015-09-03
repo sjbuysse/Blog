@@ -9,8 +9,10 @@
     <h1><%= @post.title %> </h1>
     <div class="article-info">
         <h5 class="date-author">Submitted <%= time_ago_in_words(@post.created_at)%> ago by <%= @post.author %></h5>
-        <h5 class="likes-icon icon-shaka">37</h5>
-        <a href="#comments" class="scroll"><h5 class="icon-chat comments-icon"><%= @post.comments.count %></h5></a>
+        <div class="info-symbols">
+            <%#<h5 class="likes-icon icon-shaka">37</h5>%>
+            <a href="#comments" class="scroll"><h5 class="icon-chat comments-icon"><%= @post.comments.count %></h5></a>
+        </div>
     </div>
     <%= markdown(@post.body) %>
 </div>

@@ -84,19 +84,18 @@ nav li a {
 }
 nav li a:hover {color: #000;}
 
-@media only screen and (min-width: 780px) {
+@media only screen and (min-width: 850px) {
     nav{
         z-index: 1;
     }
 }
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 850px) {
 
 header {
 	height: 60px;
 	z-index: 2;
 	background-color: #060a0c;
-	
-	position: fixed;
+    position: relative;
 	top: 0;
 	right: 0;
 	left: 0;
@@ -155,7 +154,7 @@ nav li:first-child a:hover
 nav {
 	width: 93%;
 	height: 100%;
-	position: fixed;
+    position: fixed;
 	left: 0;
 	top: 0;
 	margin: 0;

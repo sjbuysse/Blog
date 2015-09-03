@@ -105,20 +105,23 @@ textarea {
     }
     p{
         line-height: 1.75;
-        margin: 1rem 0;
     }
     .article-info{
         text-align: center;
         margin: 1rem auto;
+        margin: 1.7rem 0 1.7rem;
+        .info-symbols{
+            display: inline-block;
+        }
         h5{
             display: inline-block;
+            margin-top: 1rem;
             font-size: 1rem;
-            margin: 1.7rem 0 0.7rem;
             font-weight: 500;
             font-style:italic;
             font-family: 'PT Sans', sans-serif;
             &.comments-icon{
-                @include icon(1.7rem, 2px);
+                @include icon(2.7rem, 2px);
             }
             &.likes-icon{
                 @include icon(2.7rem, 0);
@@ -259,7 +262,7 @@ div.intrisic-ratio {
         left: 50%;
         transform: translate(-50%, -50%);
         -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
         -moz-transform: translate(-50%, -50%);
         width: 80%;
         text-align: center;
@@ -279,8 +282,8 @@ div.intrisic-ratio {
 
 .anchor {
     display:block;
-    height: 60px;
-    margin-top: -60px;
+    height: 0;
+    margin-top: 0;
     visibility: hidden;
 }
 
