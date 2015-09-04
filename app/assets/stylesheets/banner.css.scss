@@ -1,12 +1,10 @@
 @mixin arrow-icon{
     position: absolute;
-    /*top: 45vh;*/
-    top: 38vw;
+    top: 35vw;
     z-index: 1;
     &::before {
         font-family: 'icomoon';
         font-size: 2rem;
-        /*font-size: 5rem;*/
         color: white;
         color: rgba(256, 256, 256, 0.5);
     }
@@ -39,7 +37,6 @@
     }
     /*position the next element under the banner*/
     & + * {
-        /*margin-top: 108vh;*/
         margin-top: 75vw;
         margin-bottom: 10vh;
     }
@@ -54,9 +51,7 @@
 
 .dots li {
   display: inline-block;
-  /*width: 10px;*/
   width: 5px;
-  /*height: 10px;*/
   height: 5px;
   margin: 0 4px;
   text-indent: -999em;
@@ -109,6 +104,7 @@ screen and (orientation: landscape){
         ul li{
             height: 90vh;
         }
+        /*there is an empty div under the banner, with this you will put the new content under the banner*/
         & + * {
             margin-top: 90vh;
             margin-bottom: 10vh;
@@ -118,14 +114,49 @@ screen and (orientation: landscape){
         }
         .prev {
             left: 2rem;
+            top: 35vh;
             &::before {
                 font-size: 3.5rem;
             }
         }
         .next {
             right: 2rem;
+            top: 38vh;
             &::before {
                 font-size: 3.5rem;
+            }
+        }
+    }
+}
+//this is when the desktop navigation pops up
+@media screen and ( min-width: 850px ) {
+    .banner {
+        ul li{
+            height: 85vh;
+        }
+        & + * {
+            margin-top: 85vh;
+            margin-bottom: 10vh;
+        }
+        .dots{
+            bottom: 40px;
+        }
+        .dots li {
+            width: 10px;
+            height: 10px;
+        }
+        .prev {
+            left: 2rem;
+            top: 40vh;
+            &::before {
+                font-size: 5rem;
+            }
+        }
+        .next {
+            right: 2rem;
+            top: 40vh;
+            &::before {
+                font-size: 5rem;
             }
         }
     }
