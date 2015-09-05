@@ -70,12 +70,10 @@
 }
 
 .prev {
-    /*left: 3rem;*/
     left: 1.5rem;
     @include arrow-icon;
 }
 .next {
-    /*right: 3rem;*/
     right: 1.5rem;
     @include arrow-icon;
 }

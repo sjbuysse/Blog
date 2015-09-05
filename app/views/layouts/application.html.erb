@@ -18,7 +18,7 @@
 		<ul id="navToggle" class="burger slide">    <!--	Add "slideRight" class to items that move right when viewing Nav Drawer  -->
 			<li></li><li></li><li></li>
 		</ul>
-		<h1>Travelcrumbs</h1>
+        <h1><%= link_to "Travelcrumbs", root_path %></h1>
         <% if user_signed_in? %>
             <div class="control-buttons">
                 <%= link_to "New post", new_post_path , class: "button blue-hover-button" %>
