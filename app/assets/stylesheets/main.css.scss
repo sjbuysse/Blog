@@ -93,6 +93,11 @@ textarea {
     h1 {
         @include title;
     }
+    h2{
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
     h3{
         font-size: 2rem;
         text-align: center;
