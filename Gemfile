@@ -28,6 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # devise for a user system
 gem 'devise', '~> 3.5.1'
 # carrierwave and cloudinary for uploading pictures
+gem "paperclip"
 gem "carrierwave"
 gem "cloudinary", "~> 1.1.0"
 # for rendering markdown

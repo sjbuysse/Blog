@@ -37,7 +37,9 @@
     <%=f.label "Thumbnail"%><br />
     <%=f.file_field :thumb%><br />
     <div class="thumb">
-        <%= image_tag @post.thumb.url(:thumb) %><br />
+        <% if @post.thumb_url %>
+            <%= image_tag @post.thumb_url %><br />
+        <% end %>
     </div>
     <br />
     <br />
