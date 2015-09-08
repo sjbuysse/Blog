@@ -46,6 +46,11 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cloudinary (1.1.0)
@@ -201,7 +206,8 @@ PLATFORMS
 
 DEPENDENCIES
   capybara (~> 2.1.0)
-  cloudinary
+  carrierwave
+  cloudinary (~> 1.1.0)
   coffee-rails (~> 4.1.0)
   devise (~> 3.5.1)
   jbuilder (~> 2.0)
@@ -209,7 +215,7 @@ DEPENDENCIES
   jquery-turbolinks
   kramdown (~> 1.8)
   liquid
-  paperclip (~> 4.3)
+  paperclip
   rails (= 4.2.0)
   rspec-rails (~> 2.99.0)
   sass-rails (~> 5.0)

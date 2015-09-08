@@ -7,11 +7,7 @@ class Post < ActiveRecord::Base
 
     has_many :pictures, dependent: :destroy
 
-    has_attached_file :thumb, styles: {thumb: "453x300>" },
-        :path => ":rails_root/public/images/:id/:filename",
-        :url  => "/images/:id/:filename"
- 
-    validates_attachment_content_type :thumb, :content_type => /\Aimage\/.*\Z/
+    mount_uploader :thumb, ThumbUploader
 
     scope :descending, -> {order('created_at DESC')}
     
