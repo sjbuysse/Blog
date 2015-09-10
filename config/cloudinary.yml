@@ -1,0 +1,10 @@
+# config/cloudinary.yml
+development:
+  cloud_name: "travelcrumbs"
+  api_key: "446469933761679"
+  api_secret: "L3tHb2aIG1eeWossHt1JHCd5EjQ"
+
+production:
+  cloud_name: "travelcrumbs"
+  api_key: "446469933761679"
+  api_secret: "L3tHb2aIG1eeWossHt1JHCd5EjQ"
