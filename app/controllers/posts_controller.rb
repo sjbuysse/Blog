@@ -19,6 +19,7 @@ class PostsController < ApplicationController
             if params[:images]
                 params[:images].each do |image|
                     @post.pictures.create(image: image)
+                    Cloudinary::Uploader.upload(image)
                 end
             end
             flash[:success] = "Successfully created post"
@@ -42,6 +43,7 @@ class PostsController < ApplicationController
             if params[:images]
                 params[:images].each do |image|
                     @post.pictures.create(image: image)
+                    Cloudinary::Uploader.upload(image)
                 end
             end
             flash[:success] = "Successfully updated post"
