@@ -28,7 +28,7 @@
     <div class="gallery-thumbs">
     <% @post.pictures.each do |picture| %>
     <div class="thumb">
-        <%= image_tag picture.image.url %><br />
+        <%= image_tag picture.image_url(:thumb).to_s %><br />
         <%= link_to "Delete", post_picture_path(@post, picture), method: :delete %>
     </div>
     <% end %>
@@ -38,7 +38,7 @@
     <%=f.file_field :thumb%><br />
     <div class="thumb">
         <% if @post.thumb_url %>
-            <%= image_tag @post.thumb_url %><br />
+            <%= image_tag @post.thumb_url(:thumb).to_s %><br />
         <% end %>
     </div>
     <br />
