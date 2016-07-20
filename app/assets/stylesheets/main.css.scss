@@ -259,13 +259,15 @@ div.intrisic-ratio {
 
 
 .hero-image {
-    background-image: url(http://res.cloudinary.com/travelcrumbs/image/upload/v1442028177/hero%20image/footsteps.jpg);
     position: relative;
     height: 100vh;
-    background-position: 20%; 
-    background-repeat: no-repeat;
-	background-size: cover;
 	margin: 0;
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: 0 50%; 
+    }
     .motivational{
         position: absolute;
         top: 75%;
