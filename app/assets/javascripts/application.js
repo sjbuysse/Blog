@@ -15,7 +15,7 @@
 //= require jquery.turbolinks
 //= require turbolinks
 //= require scroll
-//= require picturefill
+//= require picturefill.min
 //= require jquery.event.move 
 //= require jquery.event.swipe 
 //= require unslider
