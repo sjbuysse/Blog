@@ -37,9 +37,6 @@ gem "carrierwave"
 gem "cloudinary", "~> 1.1.0"
 # for rendering markdown
 gem "kramdown", "~> 1.8"
-#for rendering safe templates 
-gem "liquid"
-
 
 
 group :development, :test do 
