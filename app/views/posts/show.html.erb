@@ -14,7 +14,7 @@
             <a href="#comments" class="scroll"><h5 class="icon-chat comments-icon"><%= @post.comments.count %></h5></a>
         </div>
     </div>
-    <%= markdown(@post.body) %>
+    <%= markdown(@post.first_body) %>
 </div>
 <div class="comments clearfix" id="comments">
     <h1><%= pluralize(@post.comments.count, "comment") %></h1>

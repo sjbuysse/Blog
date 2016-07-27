@@ -12,7 +12,7 @@ class Post < ActiveRecord::Base
     scope :descending, -> {order('created_at DESC')}
     
     validates :title, presence: true, length: {minimum: 3}
-    validates :body, presence: true, length: {minimum: 5}
+    validates :first_body, presence: true, length: {minimum: 5}
     validates :author, presence: true 
 
     def self.about

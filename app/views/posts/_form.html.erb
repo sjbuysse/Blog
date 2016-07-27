@@ -17,10 +17,7 @@
     <%=f.text_field :author%><br />
     <br />
     <%=f.label "Body"%><br />
-    <%=f.text_area :body%><br />
-    <br />
-   <%=f.label "Synopsis"%><br />
-    <%=f.text_area :synopsis%><br />
+    <%=f.text_area :first_body%><br />
     <br />
     <%=f.label "Pictures"%><br />
     <%=file_field_tag "images[]", type: :file, multiple: true %>
@@ -33,6 +30,12 @@
     </div>
     <% end %>
     </div>
+    <br />
+    <%=f.label "Second Body"%><br />
+    <%=f.text_area :second_body%><br />
+    <br />
+   <%=f.label "Synopsis"%><br />
+    <%=f.text_area :synopsis%><br />
     <br />
     <%=f.label "Thumbnail"%><br />
     <%=f.file_field :thumb%><br />
