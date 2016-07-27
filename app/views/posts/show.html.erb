@@ -14,7 +14,22 @@
             <a href="#comments" class="scroll"><h5 class="icon-chat comments-icon"><%= @post.comments.count %></h5></a>
         </div>
     </div>
-    <%= markdown(@post.first_body) %>
+    <% if @post.first_body.size > 0 %>
+        <%= markdown(@post.first_body) %>
+    <% end %>
+    <div class='banner'>
+    <a href='#' class='unslider-arrow prev icon-chevron-with-circle-left'></a> 
+    <a href='#' class='unslider-arrow next icon-chevron-with-circle-right'></a> 
+        <ul>
+            <% for picture in @post.pictures do %>
+                <li style="background-image:url(<%= picture.image %>)"></li>
+            <% end %>
+        </ul>
+    </div>
+    <div style="overflow: hidden; height: 0px; width: 0px;">&nbsp;</div>;
+    <% if @post.second_body.size > 0 %>
+        <%= markdown(@post.second_body) %>
+    <% end %>
 </div>
 <div class="comments clearfix" id="comments">
     <h1><%= pluralize(@post.comments.count, "comment") %></h1>
