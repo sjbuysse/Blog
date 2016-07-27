@@ -12,10 +12,15 @@ class Post < ActiveRecord::Base
     scope :descending, -> {order('created_at DESC')}
     
     validates :title, presence: true, length: {minimum: 3}
-    validates :first_body, presence: true, length: {minimum: 5}
     validates :author, presence: true 
+    validate :at_least_one_body
 
     def self.about
         where(title: "About us")
     end
+    def at_least_one_body
+        if [self.first_body, self.second_body].reject(&:blank?).size == 0 
+            errors[:base] << ("Please fill in at least one body")
+        end
+    end 
 end
