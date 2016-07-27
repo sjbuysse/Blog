@@ -94,7 +94,6 @@ GEM
       turbolinks
     json (1.8.3)
     kramdown (1.8.0)
-    liquid (3.0.6)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -219,7 +218,6 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   kramdown (~> 1.8)
-  liquid
   paperclip
   pg
   rails (= 4.2.0)

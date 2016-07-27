@@ -21,7 +21,6 @@
     <br />
     <%=f.label "Pictures"%><br />
     <%=file_field_tag "images[]", type: :file, multiple: true %>
-    <a href="#" class="insert-snippet button blue-hover-button">Insert code snippet</a>
     <div class="gallery-thumbs">
     <% @post.pictures.each do |picture| %>
     <div class="thumb">
