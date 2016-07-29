@@ -1,0 +1,21 @@
+{
+  "name": "Blog",
+  "homepage": "https://github.com/sjbuysse/Blog",
+  "authors": [
+    "Simon Buysse <buysse.simon@gmail.com>"
+  ],
+  "description": "A travelblog for one user",
+  "main": "",
+  "keywords": [
+    "blog"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ]
+}
