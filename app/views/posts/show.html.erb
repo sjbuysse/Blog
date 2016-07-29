@@ -22,7 +22,7 @@
     <a href='#' class='unslider-arrow next icon-chevron-with-circle-right'></a> 
         <ul>
             <% for picture in @post.pictures do %>
-                <li style="background-image:url(<%= picture.image %>)"></li>
+                <li><%= cl_image_tag(picture.image) %></li>
             <% end %>
         </ul>
     </div>
