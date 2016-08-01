@@ -21,4 +21,5 @@
 //= require unslider-options
 //= require trunk 
 //= require cloudinary-jquery/cloudinary-jquery
+//= require objectfill-polyfill
 //= require_directory .

@@ -24,6 +24,14 @@
     }
     li { 
         list-style: none; 
+        /*if li-item has compat-object-fit class, then it's showing the image as a background image, */
+        /*and the real image has to be hidden (opacity: 0)*/
+        &.compat-object-fit{
+           background-size: cover;
+           img{
+               opacity: 0;
+           }
+        }
     }
     img{
         object-fit: cover;
