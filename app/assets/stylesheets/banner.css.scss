@@ -28,6 +28,7 @@
         /*and the real image has to be hidden (opacity: 0)*/
         &.compat-object-fit{
            background-size: cover;
+           background-position: center center;
            img{
                opacity: 0;
            }
