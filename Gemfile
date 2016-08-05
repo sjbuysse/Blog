@@ -37,9 +37,6 @@ gem "carrierwave"
 gem "cloudinary", "~> 1.1.0"
 # for rendering markdown
 gem "kramdown", "~> 1.8"
-# bower is a javascript and css package manager
-gem "bower"
-
 
 group :development, :test do 
     gem 'rspec-rails', '~> 2.99.0'
