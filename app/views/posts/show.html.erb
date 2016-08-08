@@ -22,7 +22,7 @@
     <a href='#' class='unslider-arrow next icon-chevron-with-circle-right'></a> 
         <ul>
             <% for picture in @post.pictures do %>
-                <li class="post-image-container"><%= cl_image_tag(picture.image, :width => :auto, :responsive_placeholder => "blank") %></li>
+                <li class="post-image-container"><%= cl_image_tag(picture.image, :width => :auto, :dpr => :auto, :responsive_placeholder => "blank") %></li>
             <% end %>
         </ul>
     </div>
