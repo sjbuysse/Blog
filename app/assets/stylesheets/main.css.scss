@@ -117,6 +117,10 @@ textarea {
             margin-top: 1rem;
         }
     }
+    ul {
+        list-style: disc inside none;
+        line-height: 1.75;
+    }
     .article-info{
         text-align: center;
         margin: 1rem auto;
