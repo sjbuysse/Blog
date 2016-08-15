@@ -34,7 +34,7 @@ gem 'devise', '~> 3.5.1'
 # carrierwave and cloudinary for uploading pictures
 gem "paperclip"
 gem "carrierwave"
-gem "cloudinary", "~> 1.1.0"
+gem "cloudinary", "~> 1.2.2"
 # for rendering markdown
 gem "kramdown", "~> 1.8"
 
