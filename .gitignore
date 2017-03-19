@@ -15,3 +15,12 @@
 /log/*
 !/log/.keep
 /tmp
+
+# ignore bower components
+node_modules
+vendor/assets/components
+bower_components
+
+# ignore heroku env file
+/.env
+
