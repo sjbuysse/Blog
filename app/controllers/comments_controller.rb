@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
     def create
         @comment = @post.comments.new(comment_params)
-        if @comment.save
+        if verify_recaptcha(model: @message) && @comment.save
             redirect_to post_path(@post) 
         else
             render "posts/show"
