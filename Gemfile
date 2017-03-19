@@ -37,6 +37,8 @@ gem "carrierwave"
 gem "cloudinary", "~> 1.2.2"
 # for rendering markdown
 gem "kramdown", "~> 1.8"
+# Google recaptcha
+gem "recaptcha", require: "recaptcha/rails"
 
 group :development, :test do 
     gem 'rspec-rails', '~> 2.99.0'
